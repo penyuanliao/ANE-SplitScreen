@@ -1,8 +1,13 @@
 AirExtensionDeviceInfo
 ======================
 
-讀取設備相關資訊
+<a>設定</a>
+Java
 -----
 
     require 'github/markup'
     
+    
+ANT
+----
+    <?xml version="1.0"?>
