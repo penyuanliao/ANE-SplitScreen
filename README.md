@@ -38,9 +38,8 @@ ANT
             <load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
             <load-config append="true" filename="${basedir}\obj\soundConfig.xml"/>
             <source-path path-element="${basedir}/src"/>
+            <!-- classpath檔案 -->
             <source-path path-element="${FLEX_HOME}/frameworks"/>
-            <source-path path-element="${Shared_FilesVer2.dir}"/>
-            <source-path path-element="${core3.dir}"/>
         </mxmlc>
     </target>
 </project>
