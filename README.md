@@ -9,7 +9,7 @@ ANT
 -----
 ```xml
 <?xml version="1.0"?>
-<!- default:預設開始編譯 basedir:檔案位置路徑-->
+<!- default_預設開始編譯 basedir_檔案位置路徑-->
 <project name="ANT編譯名稱" default="main" basedir=".">
 <!-- 設定變數 -->
 <property name=" FLEX_HOME " value="你的Flex SDK 路徑"/>
