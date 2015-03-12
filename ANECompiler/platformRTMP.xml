@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<platform xmlns="http://ns.adobe.com/air/extension/17.0">
+    <sdkVersion>8.1</sdkVersion>
+	<linkerOptions>
+        <option>-ObjC</option>
+        <option>-ios_version_min 4.3</option>
+<!--        <option>-framework AudioToolbox</otpion>-->
+<!--        <option>-weak_framework AVFoundation</otpion>-->
+<!--        <option>-framework CoreAudio</otpion>-->
+<!--        <option>-framework CoreGraphics</otpion>-->
+<!--        <option>-framework CoreMotion</otpion>-->
+<!--        <option>-framework GLKit</otpion>-->
+<!--        <option>-libbz2</otpion>-->
+<!--        <option>-libz</otpion>-->
+<!--        <option>-framework OpenGLES</otpion>-->
+<!--        <option>-framework QuartzCore</otpion>-->
+<!--        <option>-liconv</option>-->
+	</linkerOptions>
+    <packagedDependencies>
+<!--        <packagedDependency>AudioToolbox.framework</packagedDependency>-->
+<!--        <packagedDependency>FFmpeg.framework</packagedDependency>-->
+<!--        <packagedDependency>FFEngine.framework</packagedDependency>-->
+    </packagedDependencies>
+</platform>
+
+
+
+<!--
+
+ adt -package -target ane output.ane extension.xml -swc iOSExtension.swc -platform iPhone-ARM -platformoptions platformRTMP.xml -C ./ libAirAirplay.a library.swf
+ adt -package -target ane output.ane extension.xml -swc iOSExtension.swc -platform iPhone-ARM -platformoptions platformRTMP.xml -C ./ libAirAirplay.a library.swf
+ -->
