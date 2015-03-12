@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "75A8C7451AB036600041B6B0"
                BuildableName = "AirAirplay.ane"
-               BlueprintName = "AirplayExtension.ane"
+               BlueprintName = "AirAirplay.ane"
                ReferencedContainer = "container:AirAirplay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "75A8C7451AB036600041B6B0"
             BuildableName = "AirAirplay.ane"
-            BlueprintName = "AirplayExtension.ane"
+            BlueprintName = "AirAirplay.ane"
             ReferencedContainer = "container:AirAirplay.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,7 +62,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "75A8C7451AB036600041B6B0"
             BuildableName = "AirAirplay.ane"
-            BlueprintName = "AirplayExtension.ane"
+            BlueprintName = "AirAirplay.ane"
             ReferencedContainer = "container:AirAirplay.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

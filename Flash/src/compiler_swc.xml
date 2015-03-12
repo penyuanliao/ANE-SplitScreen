@@ -1,0 +1,18 @@
+<flex-config>
+    <compiler>
+        <source-path>
+            <!-- 檔案位置 -->
+            <path-element>/Users/mobile/Documents/benson/ANE-SplitScreen/Flash/src</path-element>
+        </source-path>
+    </compiler>
+    <include-classes>
+        <!-- 檔案class名稱 -->
+        <class>com.ios.UIKit.UIKit</class>
+    </include-classes>
+    <!-- swf版本 --!>
+    <swf-version>25</swf-version>
+</flex-config>
+
+<!--
+ acompc -source-path /Users/mobile/Documents/benson/ANE-SplitScreen/Flash/src -include-classes com.ios.UIKit.UIKit -swf-version=25 -output /Users/mobile/Documents/benson/ANE-SplitScreen/Flash/src/sample.swc
+ -->
