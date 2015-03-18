@@ -20,6 +20,9 @@ cp -f "$PROJECT_DIR"/ANECompiler/platformRTMP.xml "$CONFIGURATION_BUILD_DIR"
 echo copying the swc from the original location to the "$CONFIGURATION_BUILD_DIR"
 cp -f "$NATIVEEXTENSION_SWC" "$CONFIGURATION_BUILD_DIR" 
 
+#remove libs dir
+rm -rf "$CONFIGURATION_BUILD_DIR"/libs
+
 echo copying framework file the "$PROJECT_DIR"/ANECompiler/libs.
 cp -r "$PROJECT_DIR"/ANECompiler/libs "$CONFIGURATION_BUILD_DIR"/libs
 
@@ -30,6 +33,8 @@ mkdir -p -v "$CONFIGURATION_BUILD_DIR"/swcContents
 cp -f "$CONFIGURATION_BUILD_DIR"/swcContents/library.swf "$CONFIGURATION_BUILD_DIR"
 #remove the directory swcContents
 rm -rf "$CONFIGURATION_BUILD_DIR"/swcContents
+
+echo Link_Library :"$Link_Library"
 
 read Link_Library
 if [[ -z "$Link_Library" ]] ; then
@@ -45,4 +50,7 @@ pushd "$CONFIGURATION_BUILD_DIR"
 "$AIR_SDK_PATH"/bin/adt -package -target ane "$TARGET_NAME" "$CONFIGURATION_BUILD_DIR"/extension.xml -swc "$EXTENSION_SWC_FILE_NAME" -platform iPhone-ARM -platformoptions "$CONFIGURATION_BUILD_DIR"/platformRTMP.xml -C "$CONFIGURATION_BUILD_DIR" "$NATIVE_EXTENSION_STATIC_LIB_NAME" "${links}""$CONFIGURATION_BUILD_DIR"/library.swf
 popd
 
+cp -f "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME" "$COPY_PATH"
+
 echo "$TARGET_NAME" generated at "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME" 
+echo or at "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME"

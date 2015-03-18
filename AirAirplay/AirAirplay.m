@@ -13,11 +13,11 @@
 #import "ScreenConnect.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-
+#import "iRTMPPlayer.h"
 #define DEFINE_ANE_FUNCTION(fn) FREObject (fn)(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 
 FREContext myCtx = nil;
-
+iRTMPPlayer *player = nil;
 @implementation AirAirplay
 
 static AirAirplay *sharedInstance = nil;
