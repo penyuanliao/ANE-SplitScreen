@@ -11,6 +11,9 @@
 #include "libavformat/avformat.h"
 #include "libswscale/swscale.h"
 #include "libavcodec/avcodec.h"
+#import "avformat.h"
+#import "swscale.h"
+#import "avcodec.h"
 
 typedef NS_ENUM(NSInteger, StreamType) {
     STREAM_TYPE_UNKNOWN     = -1,
@@ -31,15 +34,16 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic, assign) AVPacket iPacket;
 @property (nonatomic, assign) AVPicture iPic;
 @property (nonatomic, assign) StreamType streamNode;
-@property (nonatomic, assign) NSInteger outputWidth;
-@property (nonatomic, assign) NSInteger outputHeight;
-@property (nonatomic, assign) NSInteger sourceWidth;
-@property (nonatomic, assign) NSInteger sourceHeight;
+@property (nonatomic, assign) int outputWidth;
+@property (nonatomic, assign) int outputHeight;
+@property (nonatomic, assign) int sourceWidth;
+@property (nonatomic, assign) int sourceHeight;
 
 @property (nonatomic, assign) struct SwsContext *imgSwsCtx;
 @property (nonatomic, assign) UIImage *currentImage;
 @property (nonatomic, assign) double duration;
 @property (nonatomic, assign) double curTime;
+@property (nonatomic, readonly) int frameRate;
 
 - (void)setupWithVieo:(NSString *)rtmpPath;
 

@@ -6,12 +6,16 @@
 #import <UIKit/UIKit.h>
 
 @interface  AirAirplay : NSObject
+@property (nonatomic, retain) UIImageView *viedoView;
+@property float lastFrameTime;
 
 + (id)sharedInstance;
 
 - (NSString *)createScreenNotify;
 
 - (void)asyncyToActionScriptWithString:(NSString *)str event:(NSString *)evt;
+
+- (void)startVideoPlay;
 
 @end
 

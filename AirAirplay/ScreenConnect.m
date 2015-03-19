@@ -12,7 +12,6 @@
 
 static const char *SCREEN_CHANGE = "SCREEN_CHANGE";
 
-
 static FREContext g_cxt;
 static NSMutableArray *_windows = nil;
 
@@ -22,15 +21,13 @@ static NSMutableArray *_windows = nil;
     if (self)
     {
         g_cxt = ctx;
-        NSInteger screenCount = [[UIScreen screens]count];
-        NSString *str = [NSString stringWithFormat:@"v2.9 Screen Did Connect : screen count:%i", (int)screenCount];
+        NSInteger screenCount = [[UIScreen screens] count];
+        NSString *str = [NSString stringWithFormat:@"v3.5.0 Screen Did Connect : screen count:%i", (int)screenCount];
         FREDispatchStatusEventAsync(g_cxt, (const uint8_t *)SCREEN_CHANGE, (const uint8_t *)[str UTF8String]);
         [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Starting..." event:@"SCREEN_CHANGE"];
     }
     return self;
 }
-
-
 //hack, this is called before UIApplicationDidFinishLaunching
 + (void) load
 {
@@ -40,34 +37,28 @@ static NSMutableArray *_windows = nil;
                                              selector:@selector(screenDidConnect:)
                                                  name:@"UIScreenDidConnectNotification"
                                                object:nil];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self
-    //                                             selector:@selector(screenDidDisconnect:)
-    //                                                 name:UIScreenDidDisconnectNotification
-    //                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(screenDidDisconnect:)
+                                                 name:@"UIScreenDidDisconnectNotification"
+                                               object:nil];
 }
 #pragma mark - screen connect
-+ (void) screenDidConnect:(NSNotification *) notification
++ (void)screenDidConnect:(NSNotification *) notification
 {
-    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Screen connected" event:@"screenConnect"];
-    NSLog(@"Screen connected");
+    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Screen connected" event:@"UIScreenDidConnecting"];
+    NSLog(@"Screen did connecting");
     UIScreen                    *_screen            = nil;
     UIWindow                    *_window            = nil;
-    UIViewController   *_viewController    = nil;
+    UIViewController            *_viewController    = nil;
     
-    NSLog(@"Screen connected");
     _screen = [notification object];
     _window = [self createWindowForScreenHandle:_screen];
     
     // Get a window for it
-    _viewController = [[UIViewController alloc] init];
+    _viewController = [[[UIViewController alloc] init] autorelease];
     _viewController.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
-    _window.hidden = YES;
-    UIWindow *cur_win = [[UIApplication sharedApplication]keyWindow];
-    UIViewController *cur_viewCtrl = cur_win.rootViewController;
-    CGRect frame = cur_viewCtrl.view.frame;
-    frame.origin.x = -640;
-    cur_viewCtrl.view.frame = frame;
-    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"count:%lu",(unsigned long)[cur_viewCtrl.view.subviews count]] event:@"child"];
+    [_viewController.view addSubview:[[AirAirplay sharedInstance]viedoView]];
+    [[AirAirplay sharedInstance]startVideoPlay];
     // Add the view controller to it
     // This view controller does not do anything special, just presents a view that tells us
     // what screen we're on
@@ -75,7 +66,29 @@ static NSMutableArray *_windows = nil;
     [_window setHidden:NO];
     
 }
-+ (UIWindow *) createWindowForScreenHandle:(UIScreen *)screen {
+
+/** 監聽螢幕設備是否連線 **/
++ (void)screenDidDisconnect:(NSNotification *) notification
+{
+    NSLog(@"Screen did disconnected");
+    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Screen connected" event:@"UIScreenDidDisconnected"];
+    UIScreen    *_screen    = nil;
+    _screen = [notification object];
+
+    // Find any window attached to this screen, remove it from our window list, and release it.
+    for (UIWindow *_window in _windows)
+    {
+        if (_window.screen == _screen)
+        {
+            NSUInteger windowIndex = [_windows indexOfObject:_window];
+            [_windows removeObjectAtIndex:windowIndex];
+            // If it wasn't autorelease, you would deallocate it here.
+        }
+    }
+    return;
+}
++ (UIWindow *) createWindowForScreenHandle:(UIScreen *)screen
+{
     
     NSLog(@"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
     NSLog(@"Create windows for screen.");

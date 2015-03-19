@@ -72,7 +72,7 @@
         return -1;
     }else
     {
-        NSLog(@"video-stream id: %d", streamNode);
+        NSLog(@"video-stream id: %d", (int)streamNode);
     }
     
     iCodecCtx = ifomtCtx->streams[streamNode]->codec;
@@ -97,18 +97,17 @@
     int frameFinished = 0;
     //Init Packet
     av_init_packet(&iPacket);
-    
     while (!frameFinished && av_read_frame(ifomtCtx, &iPacket) >= 0)
     {
-        
         // A Packet of video stream.
         if (iPacket.stream_index == streamNode)
         {
             //進行解碼將資料寫入到frame
             avcodec_decode_video2(iCodecCtx, iFrame, &frameFinished, &iPacket);
-            
         }
     }
+    //Release Packet
+    av_free_packet(&iPacket);
     return frameFinished!=0;
 }
 
@@ -127,12 +126,12 @@
     //Init swscaler
     int sws_flags = quality;
     imgSwsCtx = sws_getContext(iCodecCtx->width,
-                   iCodecCtx->height,
-                   iCodecCtx->pix_fmt,
-                   outputWidth,
-                   outputHeight,
-                   fOpenGLFrmat,
-                   sws_flags, NULL, NULL, NULL);
+                               iCodecCtx->height,
+                               iCodecCtx->pix_fmt,
+                               outputWidth,
+                               outputHeight,
+                               fOpenGLFrmat,
+                               sws_flags, NULL, NULL, NULL);
     
 }
 
@@ -143,6 +142,12 @@
     if (size.height != outputHeight) outputHeight = size.height;
     [self setupSwscalerOfQuality:fVideoQualityDefault];
 }
+#pragma Getter Value
+- (int)frameRate {
+    AVStream *stream = ifomtCtx->streams[streamNode];
+    NSLog(@"framerate:%i",stream->r_frame_rate.num / stream->r_frame_rate.den);
+    return stream->r_frame_rate.num / stream->r_frame_rate.den;
+}
 #pragma Setter Value
 - (double)duration {
     return ((double)ifomtCtx->duration / AV_TIME_BASE);
@@ -152,8 +157,8 @@
     
     return iPacket.pts * (double)time_base.num / time_base.den;
 }
-- (NSInteger)sourceWidth { return iCodecCtx->width;  }
-- (NSInteger)sourceHeight { return iCodecCtx->height; }
+- (int)sourceWidth { return iCodecCtx->width;  }
+- (int)sourceHeight { return iCodecCtx->height; }
 
 #pragma -mark Drawing Image
 
@@ -161,7 +166,7 @@
     if ( !iFrame->data[0] ) return nil;
     [self convertFromRGB];
     //產生圖片
-    return [iRTMPPlayer drawingImageWithAvPicture:iPic width:outputWidth height:outputHeight];
+    return [iRTMPPlayer drawingImageWithAvPicture:iPic width:(int)outputWidth height:(int)outputHeight];
 }
 //sws_scale換成需要的格式、大小
 - (void)convertFromRGB {
@@ -193,17 +198,17 @@
 
 -(void)dealloc
 {
-    sws_freeContext(imgSwsCtx); // Release swsCaler
+    if (imgSwsCtx != NULL) sws_freeContext(imgSwsCtx); // Release swsCaler
     
-    avpicture_free(&iPic); // Release AVPicture
+    if (&iPic != NULL) avpicture_free(&iPic); // Release AVPicture
     
-    av_free_packet(&iPacket); // Free the packet that was allocated by av_read_frame
+    if (&iPacket != NULL) av_free_packet(&iPacket); // Free the packet that was allocated by av_read_frame
     
-    av_free(iFrame); // Release frame
+    if (iFrame != NULL) av_free(iFrame); // Release frame
     
-    if (iCodecCtx) avcodec_close(iCodecCtx); // Close the codec
+    if (iCodecCtx != NULL) avcodec_close(iCodecCtx); // Close the codec
     
-    if (ifomtCtx) avformat_close_input(&ifomtCtx); // Close the video file
+    if (ifomtCtx != NULL) avformat_close_input(&ifomtCtx); // Close the video file
     
     [super dealloc];
 }

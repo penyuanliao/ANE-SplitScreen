@@ -7,35 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17007FB917398624009C1500 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 17007FB817398624009C1500 /* FlashRuntimeExtensions.h */; };
+		17007FB917398624009C1500 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 17007FB817398624009C1500 /* FlashRuntimeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AC0EBB1151A38F300A3043E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC0EBB0151A38F300A3043E /* Foundation.framework */; };
 		5AC0EBC2151A3BEE00A3043E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC0EBC1151A3BEE00A3043E /* UIKit.framework */; };
-		757279831AAEE363003B78C9 /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279821AAEE363003B78C9 /* libbz2.dylib */; };
 		757279851AAEE371003B78C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279841AAEE371003B78C9 /* AVFoundation.framework */; };
-		757279871AAEE384003B78C9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279861AAEE384003B78C9 /* AudioToolbox.framework */; };
-		757279891AAEE395003B78C9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279881AAEE395003B78C9 /* CoreAudio.framework */; };
-		7572798B1AAEE3A2003B78C9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7572798A1AAEE3A2003B78C9 /* OpenGLES.framework */; };
-		7572798D1AAEE3AB003B78C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7572798C1AAEE3AB003B78C9 /* QuartzCore.framework */; };
-		7572798F1AAEE3B5003B78C9 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7572798E1AAEE3B5003B78C9 /* GLKit.framework */; };
 		757279911AAEE3C7003B78C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279901AAEE3C7003B78C9 /* CoreGraphics.framework */; };
-		757279931AAEE3DD003B78C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279921AAEE3DD003B78C9 /* libz.dylib */; };
-		757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */; };
+		757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757F1DAA1AAD43E700FA2EA6 /* AirAirplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 757F1DA81AAD43E700FA2EA6 /* AirAirplay.m */; };
-		757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */; };
+		757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757F1DB21AAD504000FA2EA6 /* ScreenConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */; };
-		75A8C7741AB175920041B6B0 /* install.md in Sources */ = {isa = PBXBuildFile; fileRef = 75A8C7731AB175920041B6B0 /* install.md */; };
-		75A8C7861AB196740041B6B0 /* libAirAirplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7771AB196740041B6B0 /* libAirAirplay.a */; };
-		75A8C7871AB196740041B6B0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77A1AB196740041B6B0 /* AudioToolbox.framework */; };
-		75A8C7881AB196740041B6B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77B1AB196740041B6B0 /* AVFoundation.framework */; };
-		75A8C7891AB196740041B6B0 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77C1AB196740041B6B0 /* CoreAudio.framework */; };
-		75A8C78A1AB196740041B6B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77D1AB196740041B6B0 /* CoreGraphics.framework */; };
-		75A8C78B1AB196740041B6B0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77E1AB196740041B6B0 /* CoreMotion.framework */; };
-		75A8C78C1AB196740041B6B0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C77F1AB196740041B6B0 /* CoreVideo.framework */; };
-		75A8C78D1AB196740041B6B0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7801AB196740041B6B0 /* GLKit.framework */; };
-		75A8C78E1AB196740041B6B0 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7811AB196740041B6B0 /* libbz2.1.0.dylib */; };
-		75A8C78F1AB196740041B6B0 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7821AB196740041B6B0 /* libz.1.dylib */; };
-		75A8C7901AB196740041B6B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7831AB196740041B6B0 /* OpenGLES.framework */; };
-		75A8C7911AB196740041B6B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A8C7841AB196740041B6B0 /* QuartzCore.framework */; };
+		75B77AA11AB92AF7007275C8 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B77AA01AB92AF7007275C8 /* libiconv.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		75B77AA31AB92DE8007275C8 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */; };
+		75C6974A1AB978B600A54283 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C697491AB978B600A54283 /* libz.1.dylib */; };
+		75C6A3FC1ABA7C6500D28407 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9701AB8364B000BE582 /* libavcodec.a */; };
+		75C6A3FD1ABA7C6500D28407 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9711AB8364B000BE582 /* libavdevice.a */; };
+		75C6A3FE1ABA7C6500D28407 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9721AB8364B000BE582 /* libavfilter.a */; };
+		75C6A3FF1ABA7C6500D28407 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9731AB8364B000BE582 /* libavformat.a */; };
+		75C6A4001ABA7C6500D28407 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9741AB8364B000BE582 /* libavutil.a */; };
+		75C6A4011ABA7C6500D28407 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9761AB8364B000BE582 /* libswscale.a */; };
+		75C6A4021ABA7D1100D28407 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9751AB8364B000BE582 /* libswresample.a */; };
+		75C6A4031ABA7D1E00D28407 /* libavcodec.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9701AB8364B000BE582 /* libavcodec.a */; };
+		75C6A4041ABA7D1E00D28407 /* libavdevice.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9711AB8364B000BE582 /* libavdevice.a */; };
+		75C6A4051ABA7D1E00D28407 /* libavfilter.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9721AB8364B000BE582 /* libavfilter.a */; };
+		75C6A4061ABA7D1E00D28407 /* libavformat.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9731AB8364B000BE582 /* libavformat.a */; };
+		75C6A4071ABA7D1E00D28407 /* libavutil.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9741AB8364B000BE582 /* libavutil.a */; };
+		75C6A4081ABA7D1E00D28407 /* libswresample.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9751AB8364B000BE582 /* libswresample.a */; };
+		75C6A4091ABA7D1E00D28407 /* libswscale.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9761AB8364B000BE582 /* libswscale.a */; };
 		75E5D9771AB8364B000BE582 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90D1AB8364B000BE582 /* avcodec.h */; };
 		75E5D9781AB8364B000BE582 /* avfft.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90E1AB8364B000BE582 /* avfft.h */; };
 		75E5D9791AB8364B000BE582 /* dv_profile.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90F1AB8364B000BE582 /* dv_profile.h */; };
@@ -128,45 +125,32 @@
 		75E5D9D01AB8364B000BE582 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D96B1AB8364B000BE582 /* version.h */; };
 		75E5D9D11AB8364B000BE582 /* swscale.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D96D1AB8364B000BE582 /* swscale.h */; };
 		75E5D9D21AB8364B000BE582 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D96E1AB8364B000BE582 /* version.h */; };
-		75E5D9D31AB8364B000BE582 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9701AB8364B000BE582 /* libavcodec.a */; };
-		75E5D9D41AB8364C000BE582 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9711AB8364B000BE582 /* libavdevice.a */; };
-		75E5D9D51AB8364C000BE582 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9721AB8364B000BE582 /* libavfilter.a */; };
-		75E5D9D61AB8364C000BE582 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9731AB8364B000BE582 /* libavformat.a */; };
-		75E5D9D71AB8364C000BE582 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9741AB8364B000BE582 /* libavutil.a */; };
-		75E5D9D81AB8364C000BE582 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9751AB8364B000BE582 /* libswresample.a */; };
-		75E5D9D91AB8364C000BE582 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9761AB8364B000BE582 /* libswscale.a */; };
-		75E5D9DC1AB8366C000BE582 /* iRTMPPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D9DA1AB8366C000BE582 /* iRTMPPlayer.h */; };
-		75E5D9DD1AB8366C000BE582 /* iRTMPPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9DB1AB8366C000BE582 /* iRTMPPlayer.m */; };
+		75E5D9E21AB90A1E000BE582 /* iRTMPPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D9E01AB90A1E000BE582 /* iRTMPPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75E5D9E31AB90A1E000BE582 /* iRTMPPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9E11AB90A1E000BE582 /* iRTMPPlayer.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75C6974F1ABA5C4800A54283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AC0EBA4151A38F300A3043E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AC0EBAC151A38F300A3043E;
+			remoteInfo = AirAirplay;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		17007FB817398624009C1500 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 		5AC0EBAD151A38F300A3043E /* libAirAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAirAirplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC0EBB0151A38F300A3043E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AC0EBB4151A38F300A3043E /* AirAirplay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirAirplay-Prefix.pch"; sourceTree = "<group>"; };
-		5AC0EBBF151A399900A3043E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5AC0EBC1151A3BEE00A3043E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		757279821AAEE363003B78C9 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		757279841AAEE371003B78C9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		757279861AAEE384003B78C9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		757279881AAEE395003B78C9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		7572798A1AAEE3A2003B78C9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		7572798C1AAEE3AB003B78C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7572798E1AAEE3B5003B78C9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		757279901AAEE3C7003B78C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		757279921AAEE3DD003B78C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirAirplay.h; sourceTree = "<group>"; };
 		757F1DA81AAD43E700FA2EA6 /* AirAirplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirAirplay.m; sourceTree = "<group>"; };
 		757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenConnect.h; sourceTree = "<group>"; };
 		757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenConnect.m; sourceTree = "<group>"; };
-		75A8C72E1AB036600041B6B0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		75A8C7311AB036600041B6B0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		75A8C7341AB036600041B6B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		75A8C7371AB036600041B6B0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		75A8C73B1AB036600041B6B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		75A8C73D1AB036600041B6B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		75A8C73F1AB036600041B6B0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		75A8C7421AB036600041B6B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		75A8C7461AB036600041B6B0 /* AirAirplay.ane */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = AirAirplay.ane; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A8C7641AB038DA0041B6B0 /* config.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = config.sh; sourceTree = "<group>"; };
 		75A8C7651AB03A6F0041B6B0 /* generateANE.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generateANE.sh; sourceTree = "<group>"; };
@@ -181,18 +165,10 @@
 		75A8C7761AB196740041B6B0 /* iOSExtension.swc */ = {isa = PBXFileReference; lastKnownFileType = file; path = iOSExtension.swc; sourceTree = "<group>"; };
 		75A8C7771AB196740041B6B0 /* libAirAirplay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAirAirplay.a; sourceTree = "<group>"; };
 		75A8C7781AB196740041B6B0 /* library.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = library.swf; sourceTree = "<group>"; };
-		75A8C77A1AB196740041B6B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioToolbox.framework; sourceTree = "<group>"; };
-		75A8C77B1AB196740041B6B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
-		75A8C77C1AB196740041B6B0 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreAudio.framework; sourceTree = "<group>"; };
-		75A8C77D1AB196740041B6B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreGraphics.framework; sourceTree = "<group>"; };
-		75A8C77E1AB196740041B6B0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMotion.framework; sourceTree = "<group>"; };
-		75A8C77F1AB196740041B6B0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreVideo.framework; sourceTree = "<group>"; };
-		75A8C7801AB196740041B6B0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLKit.framework; sourceTree = "<group>"; };
-		75A8C7811AB196740041B6B0 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbz2.1.0.dylib; sourceTree = "<group>"; };
-		75A8C7821AB196740041B6B0 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
-		75A8C7831AB196740041B6B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenGLES.framework; sourceTree = "<group>"; };
-		75A8C7841AB196740041B6B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuartzCore.framework; sourceTree = "<group>"; };
 		75A8C7851AB196740041B6B0 /* platformRTMP.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = platformRTMP.xml; sourceTree = "<group>"; };
+		75B77AA01AB92AF7007275C8 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
+		75C697491AB978B600A54283 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		75E5D90D1AB8364B000BE582 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		75E5D90E1AB8364B000BE582 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
 		75E5D90F1AB8364B000BE582 /* dv_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dv_profile.h; sourceTree = "<group>"; };
@@ -292,8 +268,8 @@
 		75E5D9741AB8364B000BE582 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
 		75E5D9751AB8364B000BE582 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		75E5D9761AB8364B000BE582 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
-		75E5D9DA1AB8366C000BE582 /* iRTMPPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTMPPlayer.h; sourceTree = "<group>"; };
-		75E5D9DB1AB8366C000BE582 /* iRTMPPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTMPPlayer.m; sourceTree = "<group>"; };
+		75E5D9E01AB90A1E000BE582 /* iRTMPPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTMPPlayer.h; sourceTree = "<group>"; };
+		75E5D9E11AB90A1E000BE582 /* iRTMPPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTMPPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,36 +277,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E5D9D71AB8364C000BE582 /* libavutil.a in Frameworks */,
-				75A8C7881AB196740041B6B0 /* AVFoundation.framework in Frameworks */,
-				757279931AAEE3DD003B78C9 /* libz.dylib in Frameworks */,
+				75C6A4021ABA7D1100D28407 /* libswresample.a in Frameworks */,
+				75C6A3FC1ABA7C6500D28407 /* libavcodec.a in Frameworks */,
+				75C6A3FD1ABA7C6500D28407 /* libavdevice.a in Frameworks */,
+				75C6A3FE1ABA7C6500D28407 /* libavfilter.a in Frameworks */,
+				75C6A3FF1ABA7C6500D28407 /* libavformat.a in Frameworks */,
+				75C6A4001ABA7C6500D28407 /* libavutil.a in Frameworks */,
+				75C6A4011ABA7C6500D28407 /* libswscale.a in Frameworks */,
+				75C6974A1AB978B600A54283 /* libz.1.dylib in Frameworks */,
+				75B77AA31AB92DE8007275C8 /* libbz2.1.0.dylib in Frameworks */,
+				75B77AA11AB92AF7007275C8 /* libiconv.dylib in Frameworks */,
 				757279911AAEE3C7003B78C9 /* CoreGraphics.framework in Frameworks */,
-				75E5D9D91AB8364C000BE582 /* libswscale.a in Frameworks */,
-				75E5D9D31AB8364B000BE582 /* libavcodec.a in Frameworks */,
-				75A8C7871AB196740041B6B0 /* AudioToolbox.framework in Frameworks */,
-				75A8C78E1AB196740041B6B0 /* libbz2.1.0.dylib in Frameworks */,
-				75A8C78D1AB196740041B6B0 /* GLKit.framework in Frameworks */,
-				75A8C7891AB196740041B6B0 /* CoreAudio.framework in Frameworks */,
-				7572798F1AAEE3B5003B78C9 /* GLKit.framework in Frameworks */,
-				7572798D1AAEE3AB003B78C9 /* QuartzCore.framework in Frameworks */,
-				75A8C78B1AB196740041B6B0 /* CoreMotion.framework in Frameworks */,
-				7572798B1AAEE3A2003B78C9 /* OpenGLES.framework in Frameworks */,
-				75A8C7901AB196740041B6B0 /* OpenGLES.framework in Frameworks */,
-				75E5D9D41AB8364C000BE582 /* libavdevice.a in Frameworks */,
-				757279891AAEE395003B78C9 /* CoreAudio.framework in Frameworks */,
-				75E5D9D81AB8364C000BE582 /* libswresample.a in Frameworks */,
-				757279871AAEE384003B78C9 /* AudioToolbox.framework in Frameworks */,
-				75A8C7861AB196740041B6B0 /* libAirAirplay.a in Frameworks */,
 				757279851AAEE371003B78C9 /* AVFoundation.framework in Frameworks */,
-				75A8C78A1AB196740041B6B0 /* CoreGraphics.framework in Frameworks */,
-				757279831AAEE363003B78C9 /* libbz2.dylib in Frameworks */,
-				75A8C7911AB196740041B6B0 /* QuartzCore.framework in Frameworks */,
 				5AC0EBC2151A3BEE00A3043E /* UIKit.framework in Frameworks */,
-				75E5D9D61AB8364C000BE582 /* libavformat.a in Frameworks */,
-				75E5D9D51AB8364C000BE582 /* libavfilter.a in Frameworks */,
 				5AC0EBB1151A38F300A3043E /* Foundation.framework in Frameworks */,
-				75A8C78F1AB196740041B6B0 /* libz.1.dylib in Frameworks */,
-				75A8C78C1AB196740041B6B0 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,27 +321,14 @@
 		5AC0EBAF151A38F300A3043E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75C697491AB978B600A54283 /* libz.1.dylib */,
+				75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */,
+				75B77AA01AB92AF7007275C8 /* libiconv.dylib */,
 				75E5D90A1AB8364B000BE582 /* ffmpeg */,
-				757279861AAEE384003B78C9 /* AudioToolbox.framework */,
 				757279841AAEE371003B78C9 /* AVFoundation.framework */,
-				757279881AAEE395003B78C9 /* CoreAudio.framework */,
 				757279901AAEE3C7003B78C9 /* CoreGraphics.framework */,
-				5AC0EBBF151A399900A3043E /* CoreMotion.framework */,
 				5AC0EBB0151A38F300A3043E /* Foundation.framework */,
-				7572798E1AAEE3B5003B78C9 /* GLKit.framework */,
-				757279821AAEE363003B78C9 /* libbz2.dylib */,
-				757279921AAEE3DD003B78C9 /* libz.dylib */,
-				7572798A1AAEE3A2003B78C9 /* OpenGLES.framework */,
-				7572798C1AAEE3AB003B78C9 /* QuartzCore.framework */,
 				5AC0EBC1151A3BEE00A3043E /* UIKit.framework */,
-				75A8C72E1AB036600041B6B0 /* CoreFoundation.framework */,
-				75A8C7311AB036600041B6B0 /* MobileCoreServices.framework */,
-				75A8C7341AB036600041B6B0 /* SystemConfiguration.framework */,
-				75A8C7371AB036600041B6B0 /* CFNetwork.framework */,
-				75A8C73B1AB036600041B6B0 /* CoreLocation.framework */,
-				75A8C73D1AB036600041B6B0 /* CoreMedia.framework */,
-				75A8C73F1AB036600041B6B0 /* CoreVideo.framework */,
-				75A8C7421AB036600041B6B0 /* Security.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -389,14 +336,12 @@
 		5AC0EBB2151A38F300A3043E /* Airpaly */ = {
 			isa = PBXGroup;
 			children = (
-				75E5D9DA1AB8366C000BE582 /* iRTMPPlayer.h */,
-				75E5D9DB1AB8366C000BE582 /* iRTMPPlayer.m */,
+				75E5D9E51AB90C30000BE582 /* Mirroring */,
+				75E5D9E41AB90BF7000BE582 /* FFmpeg-Player */,
 				17007FB817398624009C1500 /* FlashRuntimeExtensions.h */,
 				757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */,
 				757F1DA81AAD43E700FA2EA6 /* AirAirplay.m */,
 				5AC0EBB3151A38F300A3043E /* Supporting Files */,
-				757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */,
-				757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */,
 			);
 			name = Airpaly;
 			path = AirAirplay;
@@ -417,7 +362,6 @@
 				75A8C7761AB196740041B6B0 /* iOSExtension.swc */,
 				75A8C7771AB196740041B6B0 /* libAirAirplay.a */,
 				75A8C7781AB196740041B6B0 /* library.swf */,
-				75A8C7791AB196740041B6B0 /* libs */,
 				75A8C7851AB196740041B6B0 /* platformRTMP.xml */,
 				75A8C7641AB038DA0041B6B0 /* config.sh */,
 				75A8C7651AB03A6F0041B6B0 /* generateANE.sh */,
@@ -476,24 +420,6 @@
 				75A8C7701AB167D20041B6B0 /* ScannerEvent.as */,
 			);
 			path = event;
-			sourceTree = "<group>";
-		};
-		75A8C7791AB196740041B6B0 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				75A8C77A1AB196740041B6B0 /* AudioToolbox.framework */,
-				75A8C77B1AB196740041B6B0 /* AVFoundation.framework */,
-				75A8C77C1AB196740041B6B0 /* CoreAudio.framework */,
-				75A8C77D1AB196740041B6B0 /* CoreGraphics.framework */,
-				75A8C77E1AB196740041B6B0 /* CoreMotion.framework */,
-				75A8C77F1AB196740041B6B0 /* CoreVideo.framework */,
-				75A8C7801AB196740041B6B0 /* GLKit.framework */,
-				75A8C7811AB196740041B6B0 /* libbz2.1.0.dylib */,
-				75A8C7821AB196740041B6B0 /* libz.1.dylib */,
-				75A8C7831AB196740041B6B0 /* OpenGLES.framework */,
-				75A8C7841AB196740041B6B0 /* QuartzCore.framework */,
-			);
-			path = libs;
 			sourceTree = "<group>";
 		};
 		75E5D90A1AB8364B000BE582 /* ffmpeg */ = {
@@ -674,6 +600,24 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		75E5D9E41AB90BF7000BE582 /* FFmpeg-Player */ = {
+			isa = PBXGroup;
+			children = (
+				75E5D9E01AB90A1E000BE582 /* iRTMPPlayer.h */,
+				75E5D9E11AB90A1E000BE582 /* iRTMPPlayer.m */,
+			);
+			name = "FFmpeg-Player";
+			sourceTree = "<group>";
+		};
+		75E5D9E51AB90C30000BE582 /* Mirroring */ = {
+			isa = PBXGroup;
+			children = (
+				757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */,
+				757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */,
+			);
+			name = Mirroring;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -681,6 +625,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */,
+				757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */,
+				75E5D9E21AB90A1E000BE582 /* iRTMPPlayer.h in Headers */,
+				17007FB917398624009C1500 /* FlashRuntimeExtensions.h in Headers */,
 				75E5D9AB1AB8364B000BE582 /* frame.h in Headers */,
 				75E5D9A71AB8364B000BE582 /* eval.h in Headers */,
 				75E5D99E1AB8364B000BE582 /* cast5.h in Headers */,
@@ -745,7 +693,6 @@
 				75E5D9771AB8364B000BE582 /* avcodec.h in Headers */,
 				75E5D9B41AB8364B000BE582 /* macros.h in Headers */,
 				75E5D98B1AB8364B000BE582 /* version.h in Headers */,
-				757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */,
 				75E5D9881AB8364B000BE582 /* avfiltergraph.h in Headers */,
 				75E5D9C61AB8364B000BE582 /* sha512.h in Headers */,
 				75E5D9851AB8364B000BE582 /* asrc_abuffer.h in Headers */,
@@ -758,7 +705,6 @@
 				75E5D9A11AB8364B000BE582 /* cpu.h in Headers */,
 				75E5D9B61AB8364B000BE582 /* md5.h in Headers */,
 				75E5D9CA1AB8364B000BE582 /* timecode.h in Headers */,
-				17007FB917398624009C1500 /* FlashRuntimeExtensions.h in Headers */,
 				75E5D9781AB8364B000BE582 /* avfft.h in Headers */,
 				75E5D97A1AB8364B000BE582 /* dxva2.h in Headers */,
 				75E5D9991AB8364B000BE582 /* blowfish.h in Headers */,
@@ -769,11 +715,9 @@
 				75E5D9B21AB8364B000BE582 /* log.h in Headers */,
 				75E5D9791AB8364B000BE582 /* dv_profile.h in Headers */,
 				75E5D9C71AB8364B000BE582 /* stereo3d.h in Headers */,
-				757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */,
 				75E5D9A21AB8364B000BE582 /* crc.h in Headers */,
 				75E5D9CD1AB8364B000BE582 /* version.h in Headers */,
 				75E5D9AE1AB8364B000BE582 /* imgutils.h in Headers */,
-				75E5D9DC1AB8366C000BE582 /* iRTMPPlayer.h in Headers */,
 				75E5D9B71AB8364B000BE582 /* mem.h in Headers */,
 				75E5D9911AB8364B000BE582 /* attributes.h in Headers */,
 				75E5D9C31AB8364B000BE582 /* ripemd.h in Headers */,
@@ -810,6 +754,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				75C697501ABA5C4800A54283 /* PBXTargetDependency */,
 			);
 			name = AirAirplay.ane;
 			productName = AirplayExtension.ane;
@@ -881,14 +826,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C6A4031ABA7D1E00D28407 /* libavcodec.a in Sources */,
+				75C6A4041ABA7D1E00D28407 /* libavdevice.a in Sources */,
+				75C6A4051ABA7D1E00D28407 /* libavfilter.a in Sources */,
+				75C6A4061ABA7D1E00D28407 /* libavformat.a in Sources */,
+				75C6A4071ABA7D1E00D28407 /* libavutil.a in Sources */,
+				75C6A4081ABA7D1E00D28407 /* libswresample.a in Sources */,
+				75C6A4091ABA7D1E00D28407 /* libswscale.a in Sources */,
 				757F1DB21AAD504000FA2EA6 /* ScreenConnect.m in Sources */,
-				75E5D9DD1AB8366C000BE582 /* iRTMPPlayer.m in Sources */,
 				757F1DAA1AAD43E700FA2EA6 /* AirAirplay.m in Sources */,
-				75A8C7741AB175920041B6B0 /* install.md in Sources */,
+				75E5D9E31AB90A1E000BE582 /* iRTMPPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75C697501ABA5C4800A54283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AC0EBAC151A38F300A3043E /* AirAirplay */;
+			targetProxy = 75C6974F1ABA5C4800A54283 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5AC0EBB8151A38F400A3043E /* Debug */ = {
@@ -910,7 +869,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = ../;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				SYMROOT = build;
 			};
@@ -928,7 +887,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = ../;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				SYMROOT = build;
 				VALIDATE_PRODUCT = YES;
@@ -939,6 +898,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DSTROOT = /tmp/AirPlay.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,7 +914,6 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/Frameworks/ffmpeg/include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANECompiler",
@@ -971,6 +931,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DSTROOT = /tmp/AirPlay.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -985,7 +947,6 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/Frameworks/ffmpeg/include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANECompiler",
@@ -1015,10 +976,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AudioToolbox.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreAudio.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreGraphics.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreMotion.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/GLKit.framework\n${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libz.1.dylib ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/OpenGLES.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/QuartzCore.framework {CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libavcodec.a";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/CoreGraphics.framework \n${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libz.1.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavcodec.a ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libiconv.2.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavdevice.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavfilter.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavformat.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavutil.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswresample.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswscale.a";
 				NATIVEEXTENSION_PATH = Flash/src;
 				NATIVEEXTENSION_SWC = Flash/src/nativeextension.swc;
+				New_Setting = "@executable_path";
 				PRODUCT_NAME = AirAirplay;
 				SWC_Include_Classes = com.ios.UIKit.UIKit;
 				SWF_Version = 25;
@@ -1038,10 +1000,11 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AudioToolbox.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreAudio.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreGraphics.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/CoreMotion.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/GLKit.framework\n${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libz.1.dylib ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/OpenGLES.framework ${CONFIGURATION_BUILD_DIR}/ANECompilerlibs/QuartzCore.framework {CONFIGURATION_BUILD_DIR}/ANECompilerlibs/libavcodec.a";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/CoreGraphics.framework \n${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libz.1.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavcodec.a ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libiconv.2.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavdevice.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavfilter.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavformat.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavutil.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswresample.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswscale.a";
 				NATIVEEXTENSION_PATH = Flash/src;
 				NATIVEEXTENSION_SWC = Flash/src/nativeextension.swc;
+				New_Setting = "@executable_path";
 				PRODUCT_NAME = AirAirplay;
 				SWC_Include_Classes = com.ios.UIKit.UIKit;
 				SWF_Version = 25;
