@@ -2,4 +2,33 @@ dependencies: \
   /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/AirAirplay.m \
   /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/FlashRuntimeExtensions.h \
   /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/AirAirplay.h \
-  /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/ScreenConnect.h
+  /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/ScreenConnect.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/AirAirplay/iRTMPPlayer.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavformat/avformat.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavcodec/avcodec.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/samplefmt.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/avutil.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/common.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/attributes.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/version.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/macros.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/avconfig.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/mem.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/error.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/rational.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/mathematics.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/intfloat.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/log.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/pixfmt.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/old_pix_fmts.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/buffer.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/cpu.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/channel_layout.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/dict.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavutil/frame.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavcodec/version.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavcodec/old_codec_ids.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavformat/avio.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libavformat/version.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libswscale/swscale.h \
+  /Users/mobile/Documents/benson/ANE-SplitScreen/Frameworks/ffmpeg/include/libswscale/version.h
