@@ -38,7 +38,7 @@ echo Link_Library :"$Link_Library"
 
 read Link_Library
 if [[ -z "$Link_Library" ]] ; then
-    echo "link_library is empty."
+    echo "link_library is empty.""$CONFIGURATION_BUILD_DIR"/platformRTMP.xml
 else
 
     links="${Link_Library} "
@@ -47,10 +47,11 @@ fi
 
 #Run the ADT command to generate the ANE
 pushd "$CONFIGURATION_BUILD_DIR"
-"$AIR_SDK_PATH"/bin/adt -package -target ane "$TARGET_NAME" "$CONFIGURATION_BUILD_DIR"/extension.xml -swc "$EXTENSION_SWC_FILE_NAME" -platform iPhone-ARM -platformoptions "$CONFIGURATION_BUILD_DIR"/platformRTMP.xml -C "$CONFIGURATION_BUILD_DIR" "$NATIVE_EXTENSION_STATIC_LIB_NAME" "${links}""$CONFIGURATION_BUILD_DIR"/library.swf
+"$AIR_SDK_PATH"/bin/adt -package -target ane "$TARGET_NAME" "$CONFIGURATION_BUILD_DIR"/extension.xml -swc "$EXTENSION_SWC_FILE_NAME" -platform iPhone-ARM -platformoptions "$CONFIGURATION_BUILD_DIR"/platformRTMP.xml libs/libavcodec.a libs/libavdevice.a libs/libavfilter.a libs/libavformat.a libs/libavutil.a libs/libswscale.a -C "$CONFIGURATION_BUILD_DIR" "$NATIVE_EXTENSION_STATIC_LIB_NAME" "$CONFIGURATION_BUILD_DIR"/library.swf
 popd
 
-cp -f "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME" "$COPY_PATH"
+#rm "$COPY_PATH"/"$TARGET_NAME"
+#cp -f "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME" "$COPY_PATH"
 
 echo "$TARGET_NAME" generated at "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME" 
 echo or at "$CONFIGURATION_BUILD_DIR"/"$TARGET_NAME"

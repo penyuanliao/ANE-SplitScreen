@@ -137,10 +137,19 @@
 
 - (void)setScreenSize:(CGSize)size
 {
-    if (CGSizeEqualToSize(size, CGSizeMake(outputWidth, outputHeight))) return;
-    if (size.width != outputWidth) outputWidth = size.width;
-    if (size.height != outputHeight) outputHeight = size.height;
+    //    if (CGSizeEqualToSize(size, CGSizeMake(outputWidth, outputHeight))) return;
+    float ratios = [self scaleRatiosWithSize:size];
+    NSLog(@"rations:%f",ratios);
+    if (size.width != outputWidth) outputWidth = iCodecCtx->width * ratios;
+    if (size.height != outputHeight) outputHeight = iCodecCtx->height * ratios;
     [self setupSwscalerOfQuality:fVideoQualityDefault];
+}
+- (float) scaleRatiosWithSize:(CGSize)size
+{
+    float ratios = 1.0;
+    float ratiosW = size.height / outputWidth;
+    float ratiosH = size.width / outputHeight;
+    return ratios = (ratiosH > ratiosW ? ratiosW : ratiosH);
 }
 #pragma Getter Value
 - (int)frameRate {

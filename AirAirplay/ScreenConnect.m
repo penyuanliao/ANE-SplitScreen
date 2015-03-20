@@ -7,27 +7,89 @@
 //
 
 #import "ScreenConnect.h"
+@interface ScreenConnect ()
+
+/** rtmp stream url **/
+@property (nonatomic, retain) NSString *URL;
+
+@end
+
+
 
 @implementation ScreenConnect
-
-static const char *SCREEN_CHANGE = "SCREEN_CHANGE";
-
-static FREContext g_cxt;
-static NSMutableArray *_windows = nil;
+@synthesize windows;
+@synthesize URL;
+//static const char *SCREEN_CHANGE = "SCREEN_CHANGE";
+static UIImageView *videoView = nil;
+static iRTMPPlayer *player = nil;
+//singleton
++ (ScreenConnect *)singleton {
+    static dispatch_once_t pred;
+    static ScreenConnect *shared = nil;
+    dispatch_once(&pred, ^{
+        shared = [[ScreenConnect alloc] initWithContext:nil];
+        shared.windows = [NSMutableArray arrayWithCapacity:6];
+        [shared.windows addObject:[[UIApplication sharedApplication] keyWindow]];
+    });
+    return shared;
+}
 
 - (id)initWithContext:(FREContext)ctx
 {
     self = [super init];
     if (self)
     {
-        g_cxt = ctx;
         NSInteger screenCount = [[UIScreen screens] count];
-        NSString *str = [NSString stringWithFormat:@"v3.5.0 Screen Did Connect : screen count:%i", (int)screenCount];
-        FREDispatchStatusEventAsync(g_cxt, (const uint8_t *)SCREEN_CHANGE, (const uint8_t *)[str UTF8String]);
-        [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Starting..." event:@"SCREEN_CHANGE"];
+        NSString *str = [NSString stringWithFormat:@"v3.5.24 Screen Did Connect : screen count:%i", (int)screenCount];
+        [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"SCREEN_CHANGE"];
+       
+        [self setupVideoView];
     }
     return self;
 }
+
+- (void)setupVideoView {
+    
+    videoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 1280, 720)];
+    videoView.backgroundColor = [UIColor blackColor];
+
+}
+- (void)setupStreamWithStream:(NSString *)url
+{
+    if (url == NULL)
+    {
+        [self log:[NSString stringWithFormat:@"Please enter an RTMP URL."]];
+        return;
+    }
+    
+    URL = url;
+    
+    if (player != nil)
+    {
+        [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Player Release" event:@"UIScreenDidDisconnected"];
+        [player release]; player = nil;
+    }
+    player = [[iRTMPPlayer alloc]init];
+    [player setupWithVieo:url];
+    [player setScreenSize:CGSizeMake(1280, 720)];
+}
+- (NSMutableArray *)getWindows
+{
+    return windows;
+}
+- (UIImageView *)getVideoView
+{
+    return videoView;
+}
+- (iRTMPPlayer *)getPlayer
+{
+    return player;
+}
+- (void)log:(NSString *)str
+{
+     [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"Stream_Error_Event"];
+}
+
 //hack, this is called before UIApplicationDidFinishLaunching
 + (void) load
 {
@@ -55,9 +117,13 @@ static NSMutableArray *_windows = nil;
     _window = [self createWindowForScreenHandle:_screen];
     
     // Get a window for it
-    _viewController = [[[UIViewController alloc] init] autorelease];
-    _viewController.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
-    [_viewController.view addSubview:[[AirAirplay sharedInstance]viedoView]];
+    _viewController = [[[UIViewController alloc] init]autorelease];
+    _viewController.view.backgroundColor = [UIColor blueColor];
+    UIImageView *view = videoView;
+    view.frame = [_screen bounds];
+    [_viewController.view addSubview:view];
+    NSString *str = [NSString stringWithFormat:@"Screen bounds:%@ Video Bounds:%@",NSStringFromCGRect(_screen.bounds),NSStringFromCGRect(view.frame)];
+    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"UIScreenDidConnecting"];
     [[AirAirplay sharedInstance]startVideoPlay];
     // Add the view controller to it
     // This view controller does not do anything special, just presents a view that tells us
@@ -74,18 +140,26 @@ static NSMutableArray *_windows = nil;
     [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Screen connected" event:@"UIScreenDidDisconnected"];
     UIScreen    *_screen    = nil;
     _screen = [notification object];
-
+    NSMutableArray *_wins = [[ScreenConnect singleton] getWindows];
+    
+    if (_wins == NULL)
+    {
+        [[AirAirplay sharedInstance]asyncyToActionScriptWithString:@"Windows Array is Null." event:@"UIScreenDidDisconnected"];
+        return;
+    }
+    
     // Find any window attached to this screen, remove it from our window list, and release it.
-    for (UIWindow *_window in _windows)
+    for (UIWindow *_window in _wins)
     {
         if (_window.screen == _screen)
         {
-            NSUInteger windowIndex = [_windows indexOfObject:_window];
-            [_windows removeObjectAtIndex:windowIndex];
+            NSUInteger windowIndex = [_wins indexOfObject:_window];
+            [_wins removeObjectAtIndex:windowIndex];
             // If it wasn't autorelease, you would deallocate it here.
+            [videoView removeFromSuperview];
+            [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"Windows %lu", (unsigned long)windowIndex] event:@"UIScreenDidDisconnected"];
         }
     }
-    return;
 }
 + (UIWindow *) createWindowForScreenHandle:(UIScreen *)screen
 {
@@ -94,7 +168,7 @@ static NSMutableArray *_windows = nil;
     NSLog(@"Create windows for screen.");
     
     UIWindow    *_window    = nil;
-    NSMutableArray *_wins = _windows;
+    NSMutableArray *_wins = [[ScreenConnect singleton] getWindows];
     
     NSLog(@"Init windows NSArray.");
     
@@ -103,6 +177,8 @@ static NSMutableArray *_windows = nil;
         _wins = [[NSMutableArray alloc]initWithCapacity:6];
         //增加當下視窗物件
         [_wins addObject:[[UIApplication sharedApplication] keyWindow]];
+        
+        [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"Create windows Array.%i", (int)[_wins count]] event:@"UIScreenDidDisconnected"];
     }
     
     NSLog(@"Search current window for this screen.");

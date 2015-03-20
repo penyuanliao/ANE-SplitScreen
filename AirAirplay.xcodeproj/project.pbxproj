@@ -169,6 +169,7 @@
 		75B77AA01AB92AF7007275C8 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
 		75C697491AB978B600A54283 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
+		75C6A40B1ABC00BF00D28407 /* SplitScreen.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitScreen.as; sourceTree = "<group>"; };
 		75E5D90D1AB8364B000BE582 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		75E5D90E1AB8364B000BE582 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
 		75E5D90F1AB8364B000BE582 /* dv_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dv_profile.h; sourceTree = "<group>"; };
@@ -406,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				75A8C76C1AB167D20041B6B0 /* event */,
+				75C6A40B1ABC00BF00D28407 /* SplitScreen.as */,
 				75A8C7711AB167D20041B6B0 /* UIKit.as */,
 			);
 			path = UIKit;
@@ -980,9 +982,8 @@
 				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/CoreGraphics.framework \n${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libz.1.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavcodec.a ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libiconv.2.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavdevice.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavfilter.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavformat.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavutil.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswresample.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswscale.a";
 				NATIVEEXTENSION_PATH = Flash/src;
 				NATIVEEXTENSION_SWC = Flash/src/nativeextension.swc;
-				New_Setting = "@executable_path";
 				PRODUCT_NAME = AirAirplay;
-				SWC_Include_Classes = com.ios.UIKit.UIKit;
+				SWC_Include_Classes = com.ios.UIKit.SplitScreen;
 				SWF_Version = 25;
 				USER_HEADER_SEARCH_PATHS = "/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/bin/include/";
 			};
@@ -1004,9 +1005,8 @@
 				Link_Library = "${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/AVFoundation.framework ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/CoreGraphics.framework \n${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libbz2.1.0.dylib ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libz.1.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavcodec.a ${CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libiconv.2.dylib {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavdevice.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavfilter.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavformat.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libavutil.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswresample.a {CONFIGURATION_BUILD_DIR}/ANECompiler/libs/libswscale.a";
 				NATIVEEXTENSION_PATH = Flash/src;
 				NATIVEEXTENSION_SWC = Flash/src/nativeextension.swc;
-				New_Setting = "@executable_path";
 				PRODUCT_NAME = AirAirplay;
-				SWC_Include_Classes = com.ios.UIKit.UIKit;
+				SWC_Include_Classes = com.ios.UIKit.SplitScreen;
 				SWF_Version = 25;
 				USER_HEADER_SEARCH_PATHS = "/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/bin/include/";
 			};

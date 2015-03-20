@@ -14,13 +14,13 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "iRTMPPlayer.h"
-#define DEFINE_ANE_FUNCTION(fn) FREObject (fn)(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 
 FREContext myCtx = nil;
+ScreenConnect *splitScreen;
 @implementation AirAirplay
-@synthesize viedoView, lastFrameTime;
+@synthesize lastFrameTime;
 
-static iRTMPPlayer *player = nil;
+//static iRTMPPlayer *player = nil;
 static AirAirplay *sharedInstance = nil;
 
 + (AirAirplay *)sharedInstance
@@ -45,26 +45,21 @@ static AirAirplay *sharedInstance = nil;
 
 - (NSString *)createScreenNotify
 {
-    ScreenConnect *sc = [[ScreenConnect alloc]initWithContext:myCtx];
-    
-    UIWindow *win = [[[UIApplication sharedApplication] delegate] window];
-    
-    self.viedoView = [[UIImageView alloc]initWithFrame:win.bounds];
-    viedoView.backgroundColor = [UIColor colorWithRed:0.68 green:0.37 blue:0.71 alpha:1.0];
-    [self setupVideoPlay];
+    splitScreen = [ScreenConnect singleton];
+//    [self setupVideoPlay];
     return @"sharedInstance";
 }
-/** 初始化設定播放器 **/
-- (void)setupVideoPlay
-{
-    player = [[iRTMPPlayer alloc]init];
-    [player setupWithVieo:@"rtmp://183.182.70.196:443/video/dabbb/videohd"];
-    [player setScreenSize:CGSizeMake(426, 320)];
-}
+///** 初始化設定播放器 **/
+//- (void)setupVideoPlay
+//{
+//    player = [[iRTMPPlayer alloc]init];
+//    [player setupWithVieo:@"rtmp://183.182.70.196:443/video/dabbb/videohd"];
+//    [player setScreenSize:CGSizeMake(1280, 720)];
+//}
 - (void)startVideoPlay
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [NSTimer scheduledTimerWithTimeInterval:1.0/10
+        [NSTimer scheduledTimerWithTimeInterval:1.0/25
                                          target:self
                                        selector:@selector(displayNextFrame2:)
                                        userInfo:nil
@@ -76,11 +71,14 @@ static AirAirplay *sharedInstance = nil;
 -(void)displayNextFrame2:(NSTimer *)timer {
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
+    iRTMPPlayer *player = [splitScreen getPlayer];
+    
     if (![player startStreaming]) {
         [timer invalidate];
         return;
     }
-    viedoView.image = player.currentImage;
+    
+    [splitScreen getVideoView].image = player.currentImage;
     float frameTime = 1.0/([NSDate timeIntervalSinceReferenceDate]-startTime);
     if (lastFrameTime<0) {
         lastFrameTime = frameTime;
@@ -95,10 +93,7 @@ static AirAirplay *sharedInstance = nil;
 }
 @end
 
-
-
-
-FREObject init(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
+DEFINE_ANE_FUNCTION(init)
 {
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"SCREEN_CHANGE" UTF8String], (const uint8_t *)[@"init" UTF8String]);
 //    airplay = [[screenNotify alloc] initWithContext:myCtx];
@@ -108,16 +103,40 @@ FREObject init(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"SCREEN_CHANGE" UTF8String], (const uint8_t *)[str UTF8String]);
     return NULL;
 }
+DEFINE_ANE_FUNCTION(videoStreamingStartup)
+{
+    NSString *url = FREObjectToNSString(argv[0]);
+    //@"rtmp://183.182.70.196:443/video/dabbb/videohd"
+    [splitScreen setupStreamWithStream:url];
+    
+    return BoolToFREObject(true);
+}
 
-// AirplayContextInitializer()
-//
+// Return FREObject
+FREObject BoolToFREObject(BOOL boolean)
+{
+    FREObject result;
+    uint32_t value = boolean;
+    FRENewObjectFromBool(value, &result);
+    return result;
+}
+NSString* FREObjectToNSString(FREObject arg)
+{
+    uint32_t strSize;
+    const uint8_t *strCr;
+    FREGetObjectAsUTF8(arg, &strSize, &strCr);
+    NSString *str = [NSString stringWithUTF8String:(char *)strCr];
+    return str;
+}
+
+/** AirplayContextInitializer() **/
 // The context initializer is called when the runtime creates the extension context instance.
 void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx,
                                uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
     
     // Register the links btwn AS3 and ObjC. (dont forget to modify the nbFuntionsToLink integer if you are adding/removing functions)
-    NSInteger nbFuntionsToLink = 1;
+    NSInteger nbFuntionsToLink = 2;
     *numFunctionsToTest = (int)nbFuntionsToLink;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * nbFuntionsToLink);
@@ -126,6 +145,9 @@ void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext
     func[0].functionData = NULL;
     func[0].function = &init;
     
+    func[1].name = (const uint8_t*) "videoStreamingStartup";
+    func[1].functionData = NULL;
+    func[1].function = &videoStreamingStartup;
     
     *functionsToSet = func;
     
