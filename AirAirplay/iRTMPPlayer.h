@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, StreamType) {
 @property (nonatomic, assign) double duration;
 @property (nonatomic, assign) double curTime;
 @property (nonatomic, readonly) int frameRate;
+@property (nonatomic, retain) NSString *UUID;
 
 - (void)setupWithVieo:(NSString *)rtmpPath;
 

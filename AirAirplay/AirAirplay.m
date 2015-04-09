@@ -10,13 +10,13 @@
 #import <UIKit/UIApplication.h>
 #import <UIKit/UIAlertView.h>
 #import "AirAirplay.h"
-#import "ScreenConnect.h"
+#import "SplitScreen.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import "iRTMPPlayer.h"
+#import "frameYUV.h"
 
 FREContext myCtx = nil;
-ScreenConnect *splitScreen;
+SplitScreen *splitScreen;
 @implementation AirAirplay
 @synthesize lastFrameTime;
 
@@ -45,17 +45,11 @@ static AirAirplay *sharedInstance = nil;
 
 - (NSString *)createScreenNotify
 {
-    splitScreen = [ScreenConnect singleton];
+    splitScreen = [SplitScreen singleton];
 //    [self setupVideoPlay];
     return @"sharedInstance";
 }
 ///** 初始化設定播放器 **/
-//- (void)setupVideoPlay
-//{
-//    player = [[iRTMPPlayer alloc]init];
-//    [player setupWithVieo:@"rtmp://183.182.70.196:443/video/dabbb/videohd"];
-//    [player setScreenSize:CGSizeMake(1280, 720)];
-//}
 - (void)startVideoPlay
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -67,18 +61,20 @@ static AirAirplay *sharedInstance = nil;
     });
 }
 
-
--(void)displayNextFrame2:(NSTimer *)timer {
+-(void)displayNextFrame2:(NSTimer *)timer
+{
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
-    iRTMPPlayer *player = [splitScreen getPlayer];
+    RTMPDecoder *_decoder = [splitScreen decoder];
     
-    if (![player startStreaming]) {
+    if (![_decoder decodeFrame]) {
         [timer invalidate];
         return;
     }
     
-    [splitScreen getVideoView].image = player.currentImage;
+    frameYUV *yuv = [[frameYUV alloc]initWithAVFrame:_decoder.iFrame andCodec:_decoder.iCodecCtx];
+    [[splitScreen getVideoView] render:yuv];
+    
     float frameTime = 1.0/([NSDate timeIntervalSinceReferenceDate]-startTime);
     if (lastFrameTime<0) {
         lastFrameTime = frameTime;
@@ -92,7 +88,7 @@ static AirAirplay *sharedInstance = nil;
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[evt UTF8String], (const uint8_t *)[str UTF8String]);
 }
 @end
-
+/** 初始化物件 **/
 DEFINE_ANE_FUNCTION(init)
 {
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"SCREEN_CHANGE" UTF8String], (const uint8_t *)[@"init" UTF8String]);
@@ -103,12 +99,13 @@ DEFINE_ANE_FUNCTION(init)
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"SCREEN_CHANGE" UTF8String], (const uint8_t *)[str UTF8String]);
     return NULL;
 }
+/****/
 DEFINE_ANE_FUNCTION(videoStreamingStartup)
 {
     NSString *url = FREObjectToNSString(argv[0]);
+    FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"stremStartup" UTF8String], (const uint8_t *)[url UTF8String]);
     //@"rtmp://183.182.70.196:443/video/dabbb/videohd"
-    [splitScreen setupStreamWithStream:url];
-    
+    [splitScreen setupStreamWithPath:url]; // 新增影片網址
     return BoolToFREObject(true);
 }
 

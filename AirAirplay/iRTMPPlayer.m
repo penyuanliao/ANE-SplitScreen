@@ -5,11 +5,15 @@
 //  Created by mobile on 2015/3/16.
 //
 //
-
+#import "AirAirplay.h"
 #import "iRTMPPlayer.h"
 
 #define fOpenGLFrmat PIX_FMT_RGB24
 #define fVideoQualityDefault SWS_FAST_BILINEAR
+
+static NSDate *rtmpTimeout; //超時跳出
+static BOOL isRead = false;
+
 @interface iRTMPPlayer ()
 
 @end
@@ -25,7 +29,11 @@
 - (id)init {
     NSLog(@"init");
     self = [super init];
-    if (self) { };
+    if (self) {
+    
+        _UUID = [[NSUUID UUID] UUIDString];
+        
+    };
     return self;
 }
 
@@ -42,16 +50,41 @@
     avcodec_register_all();
     av_register_all();
     avformat_network_init();
+    ifomtCtx = avformat_alloc_context();
+    //Initialize intrrupt callback
+    ifomtCtx->interrupt_callback.callback = decode_interrupt_cb;
+    ifomtCtx->interrupt_callback.opaque = ifomtCtx;
 }
-
+/** 檢查是否讀取超過時間 **/
+static int decode_interrupt_cb(void *ctx)
+{
+    
+    AVFormatContext *ictx = ctx;
+    if (ictx->duration != 0)
+    {
+        rtmpTimeout = 0;
+        return 0;
+    }
+    NSTimeInterval timeInterval = [rtmpTimeout timeIntervalSinceNow];
+    timeInterval = -timeInterval;
+    //time out 5.0 sec
+    if (timeInterval > 5.0)
+    {
+        return 1; // abort
+    }
+    else
+        return 0;
+}
 - (int)setupOpenStream:(NSString *)fileName
 {
     const char *_fileName = [fileName cStringUsingEncoding:NSASCIIStringEncoding];
+    isRead = false;
     if (avformat_open_input(&ifomtCtx, _fileName, nil, nil) != 0) {
         av_log(NULL, AV_LOG_ERROR, "Couldn't open file\n");
         return -1;
     }else
     {
+        isRead = true;
         av_log(nil, AV_LOG_INFO, "function::avformat_open_input();\n");
     }
     //取得時間訊息(自動建立)
@@ -94,9 +127,11 @@
 
 - (BOOL)startStreaming
 {
+    if (!isRead) return NO;
     int frameFinished = 0;
     //Init Packet
     av_init_packet(&iPacket);
+    
     while (!frameFinished && av_read_frame(ifomtCtx, &iPacket) >= 0)
     {
         // A Packet of video stream.
@@ -137,6 +172,7 @@
 
 - (void)setScreenSize:(CGSize)size
 {
+    if (!isRead) return;
     //    if (CGSizeEqualToSize(size, CGSizeMake(outputWidth, outputHeight))) return;
     float ratios = [self scaleRatiosWithSize:size];
     NSLog(@"rations:%f",ratios);
@@ -153,6 +189,7 @@
 }
 #pragma Getter Value
 - (int)frameRate {
+    if (!isRead) return 0;
     AVStream *stream = ifomtCtx->streams[streamNode];
     NSLog(@"framerate:%i",stream->r_frame_rate.num / stream->r_frame_rate.den);
     return stream->r_frame_rate.num / stream->r_frame_rate.den;
@@ -207,6 +244,8 @@
 
 -(void)dealloc
 {
+    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"Release UUID:%@", _UUID] event:@"iRTMPPlayerEvent"];
+    
     if (imgSwsCtx != NULL) sws_freeContext(imgSwsCtx); // Release swsCaler
     
     if (&iPic != NULL) avpicture_free(&iPic); // Release AVPicture

@@ -14,8 +14,18 @@
 		757279911AAEE3C7003B78C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757279901AAEE3C7003B78C9 /* CoreGraphics.framework */; };
 		757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757F1DAA1AAD43E700FA2EA6 /* AirAirplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 757F1DA81AAD43E700FA2EA6 /* AirAirplay.m */; };
-		757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		757F1DB21AAD504000FA2EA6 /* ScreenConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */; };
+		757F1DB11AAD504000FA2EA6 /* SplitScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F1DAF1AAD504000FA2EA6 /* SplitScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757F1DB21AAD504000FA2EA6 /* SplitScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 757F1DB01AAD504000FA2EA6 /* SplitScreen.m */; };
+		75A7270E1AD50F58008A2FBB /* OpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A7270C1AD50F58008A2FBB /* OpenGL.h */; };
+		75A7270F1AD50F58008A2FBB /* OpenGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A7270D1AD50F58008A2FBB /* OpenGL.m */; };
+		75A727111AD50FCE008A2FBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A727101AD50FCE008A2FBB /* QuartzCore.framework */; };
+		75A727131AD50FD6008A2FBB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A727121AD50FD6008A2FBB /* OpenGLES.framework */; };
+		75A727181AD514BA008A2FBB /* frameYUV.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A727141AD514BA008A2FBB /* frameYUV.h */; };
+		75A727191AD514BA008A2FBB /* frameYUV.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A727151AD514BA008A2FBB /* frameYUV.m */; };
+		75A7271A1AD514BA008A2FBB /* GLSLRenderYUV.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A727161AD514BA008A2FBB /* GLSLRenderYUV.h */; };
+		75A7271B1AD514BA008A2FBB /* GLSLRenderYUV.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A727171AD514BA008A2FBB /* GLSLRenderYUV.m */; };
+		75A7271F1AD514C6008A2FBB /* RTMPDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A7271D1AD514C6008A2FBB /* RTMPDecoder.h */; };
+		75A727201AD514C6008A2FBB /* RTMPDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A7271E1AD514C6008A2FBB /* RTMPDecoder.m */; };
 		75B77AA11AB92AF7007275C8 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B77AA01AB92AF7007275C8 /* libiconv.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		75B77AA31AB92DE8007275C8 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */; };
 		75C6974A1AB978B600A54283 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C697491AB978B600A54283 /* libz.1.dylib */; };
@@ -149,8 +159,18 @@
 		757279901AAEE3C7003B78C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		757F1DA71AAD43E700FA2EA6 /* AirAirplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirAirplay.h; sourceTree = "<group>"; };
 		757F1DA81AAD43E700FA2EA6 /* AirAirplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirAirplay.m; sourceTree = "<group>"; };
-		757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenConnect.h; sourceTree = "<group>"; };
-		757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenConnect.m; sourceTree = "<group>"; };
+		757F1DAF1AAD504000FA2EA6 /* SplitScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitScreen.h; sourceTree = "<group>"; };
+		757F1DB01AAD504000FA2EA6 /* SplitScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitScreen.m; sourceTree = "<group>"; };
+		75A7270C1AD50F58008A2FBB /* OpenGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
+		75A7270D1AD50F58008A2FBB /* OpenGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGL.m; sourceTree = "<group>"; };
+		75A727101AD50FCE008A2FBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		75A727121AD50FD6008A2FBB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		75A727141AD514BA008A2FBB /* frameYUV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameYUV.h; sourceTree = "<group>"; };
+		75A727151AD514BA008A2FBB /* frameYUV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frameYUV.m; sourceTree = "<group>"; };
+		75A727161AD514BA008A2FBB /* GLSLRenderYUV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLSLRenderYUV.h; sourceTree = "<group>"; };
+		75A727171AD514BA008A2FBB /* GLSLRenderYUV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLSLRenderYUV.m; sourceTree = "<group>"; };
+		75A7271D1AD514C6008A2FBB /* RTMPDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPDecoder.h; sourceTree = "<group>"; };
+		75A7271E1AD514C6008A2FBB /* RTMPDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMPDecoder.m; sourceTree = "<group>"; };
 		75A8C7461AB036600041B6B0 /* AirAirplay.ane */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = AirAirplay.ane; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A8C7641AB038DA0041B6B0 /* config.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = config.sh; sourceTree = "<group>"; };
 		75A8C7651AB03A6F0041B6B0 /* generateANE.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generateANE.sh; sourceTree = "<group>"; };
@@ -278,6 +298,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A727131AD50FD6008A2FBB /* OpenGLES.framework in Frameworks */,
+				75A727111AD50FCE008A2FBB /* QuartzCore.framework in Frameworks */,
 				75C6A4021ABA7D1100D28407 /* libswresample.a in Frameworks */,
 				75C6A3FC1ABA7C6500D28407 /* libavcodec.a in Frameworks */,
 				75C6A3FD1ABA7C6500D28407 /* libavdevice.a in Frameworks */,
@@ -322,6 +344,8 @@
 		5AC0EBAF151A38F300A3043E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75A727121AD50FD6008A2FBB /* OpenGLES.framework */,
+				75A727101AD50FCE008A2FBB /* QuartzCore.framework */,
 				75C697491AB978B600A54283 /* libz.1.dylib */,
 				75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */,
 				75B77AA01AB92AF7007275C8 /* libiconv.dylib */,
@@ -337,6 +361,7 @@
 		5AC0EBB2151A38F300A3043E /* Airpaly */ = {
 			isa = PBXGroup;
 			children = (
+				75A7270B1AD4FC53008A2FBB /* NetStream */,
 				75E5D9E51AB90C30000BE582 /* Mirroring */,
 				75E5D9E41AB90BF7000BE582 /* FFmpeg-Player */,
 				17007FB817398624009C1500 /* FlashRuntimeExtensions.h */,
@@ -354,6 +379,29 @@
 				5AC0EBB4151A38F300A3043E /* AirAirplay-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75A7270B1AD4FC53008A2FBB /* NetStream */ = {
+			isa = PBXGroup;
+			children = (
+				75A7271C1AD514C6008A2FBB /* StreamDecoder */,
+				75A727141AD514BA008A2FBB /* frameYUV.h */,
+				75A727151AD514BA008A2FBB /* frameYUV.m */,
+				75A727161AD514BA008A2FBB /* GLSLRenderYUV.h */,
+				75A727171AD514BA008A2FBB /* GLSLRenderYUV.m */,
+				75A7270C1AD50F58008A2FBB /* OpenGL.h */,
+				75A7270D1AD50F58008A2FBB /* OpenGL.m */,
+			);
+			path = NetStream;
+			sourceTree = "<group>";
+		};
+		75A7271C1AD514C6008A2FBB /* StreamDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				75A7271D1AD514C6008A2FBB /* RTMPDecoder.h */,
+				75A7271E1AD514C6008A2FBB /* RTMPDecoder.m */,
+			);
+			path = StreamDecoder;
 			sourceTree = "<group>";
 		};
 		75A8C7631AB0387E0041B6B0 /* ANECompiler */ = {
@@ -614,8 +662,8 @@
 		75E5D9E51AB90C30000BE582 /* Mirroring */ = {
 			isa = PBXGroup;
 			children = (
-				757F1DAF1AAD504000FA2EA6 /* ScreenConnect.h */,
-				757F1DB01AAD504000FA2EA6 /* ScreenConnect.m */,
+				757F1DAF1AAD504000FA2EA6 /* SplitScreen.h */,
+				757F1DB01AAD504000FA2EA6 /* SplitScreen.m */,
 			);
 			name = Mirroring;
 			sourceTree = "<group>";
@@ -628,7 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757F1DA91AAD43E700FA2EA6 /* AirAirplay.h in Headers */,
-				757F1DB11AAD504000FA2EA6 /* ScreenConnect.h in Headers */,
+				757F1DB11AAD504000FA2EA6 /* SplitScreen.h in Headers */,
 				75E5D9E21AB90A1E000BE582 /* iRTMPPlayer.h in Headers */,
 				17007FB917398624009C1500 /* FlashRuntimeExtensions.h in Headers */,
 				75E5D9AB1AB8364B000BE582 /* frame.h in Headers */,
@@ -662,6 +710,7 @@
 				75E5D9AC1AB8364B000BE582 /* hash.h in Headers */,
 				75E5D9901AB8364B000BE582 /* aes.h in Headers */,
 				75E5D9CC1AB8364B000BE582 /* twofish.h in Headers */,
+				75A727181AD514BA008A2FBB /* frameYUV.h in Headers */,
 				75E5D97C1AB8364B000BE582 /* qsv.h in Headers */,
 				75E5D9841AB8364B000BE582 /* version.h in Headers */,
 				75E5D99C1AB8364B000BE582 /* buffer.h in Headers */,
@@ -674,6 +723,7 @@
 				75E5D9B91AB8364B000BE582 /* murmur3.h in Headers */,
 				75E5D9BB1AB8364B000BE582 /* opt.h in Headers */,
 				75E5D9811AB8364B000BE582 /* vorbis_parser.h in Headers */,
+				75A7270E1AD50F58008A2FBB /* OpenGL.h in Headers */,
 				75E5D9BE1AB8364B000BE582 /* pixelutils.h in Headers */,
 				75E5D9821AB8364B000BE582 /* xvmc.h in Headers */,
 				75E5D97B1AB8364B000BE582 /* old_codec_ids.h in Headers */,
@@ -687,6 +737,7 @@
 				75E5D9C11AB8364B000BE582 /* rational.h in Headers */,
 				75E5D9951AB8364B000BE582 /* avconfig.h in Headers */,
 				75E5D9C01AB8364B000BE582 /* random_seed.h in Headers */,
+				75A7271A1AD514BA008A2FBB /* GLSLRenderYUV.h in Headers */,
 				75E5D98C1AB8364B000BE582 /* avformat.h in Headers */,
 				75E5D9831AB8364B000BE582 /* avdevice.h in Headers */,
 				75E5D98E1AB8364B000BE582 /* version.h in Headers */,
@@ -712,6 +763,7 @@
 				75E5D9991AB8364B000BE582 /* blowfish.h in Headers */,
 				75E5D99B1AB8364B000BE582 /* bswap.h in Headers */,
 				75E5D9A51AB8364B000BE582 /* downmix_info.h in Headers */,
+				75A7271F1AD514C6008A2FBB /* RTMPDecoder.h in Headers */,
 				75E5D97F1AB8364B000BE582 /* vdpau.h in Headers */,
 				75E5D9861AB8364B000BE582 /* avcodec.h in Headers */,
 				75E5D9B21AB8364B000BE582 /* log.h in Headers */,
@@ -828,16 +880,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A727191AD514BA008A2FBB /* frameYUV.m in Sources */,
 				75C6A4031ABA7D1E00D28407 /* libavcodec.a in Sources */,
 				75C6A4041ABA7D1E00D28407 /* libavdevice.a in Sources */,
 				75C6A4051ABA7D1E00D28407 /* libavfilter.a in Sources */,
 				75C6A4061ABA7D1E00D28407 /* libavformat.a in Sources */,
 				75C6A4071ABA7D1E00D28407 /* libavutil.a in Sources */,
+				75A7271B1AD514BA008A2FBB /* GLSLRenderYUV.m in Sources */,
+				75A7270F1AD50F58008A2FBB /* OpenGL.m in Sources */,
 				75C6A4081ABA7D1E00D28407 /* libswresample.a in Sources */,
 				75C6A4091ABA7D1E00D28407 /* libswscale.a in Sources */,
-				757F1DB21AAD504000FA2EA6 /* ScreenConnect.m in Sources */,
+				757F1DB21AAD504000FA2EA6 /* SplitScreen.m in Sources */,
 				757F1DAA1AAD43E700FA2EA6 /* AirAirplay.m in Sources */,
 				75E5D9E31AB90A1E000BE582 /* iRTMPPlayer.m in Sources */,
+				75A727201AD514C6008A2FBB /* RTMPDecoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
