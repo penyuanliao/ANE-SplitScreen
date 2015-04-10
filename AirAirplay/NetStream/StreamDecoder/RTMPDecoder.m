@@ -123,6 +123,16 @@ static int decode_interrupt_cb(void *ctx)
     
     ifomtCtx->probesize2 = 4096;
     
+    
+    //av_opt_set(videoStream ->priv_data, "preset", "superfast", 0);  
+    //av_opt_set(videoStream ->priv_data, "tune", "zerolatency", 0);
+    //AVDictionary * codec_options( 0 );
+    //av_dict_set( &codec_options, "preset", "veryfast", 0 );   
+    //** av_dict_set( &codec_options, "AnyCodecParameter", "Value", 0 );
+    //avcodec_open2( codecContext, videoCodec, &codec_options );
+    //======
+    
+    
     //Init the video codec (RTMP flv H264)
     AVStream *videoStream = ifomtCtx->streams[0];
     iCodecCtx = videoStream->codec;
