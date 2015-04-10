@@ -23,7 +23,7 @@
 
 + (void) screenDidConnect:(NSNotification *) notification;
 
-+ (id)singleton;
++ (id) singleton;
 
 - (id)initWithContext:(FREContext)ctx;
 

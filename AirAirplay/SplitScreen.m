@@ -39,7 +39,7 @@ static OpenGL *GLVideoView = nil;
     if (self)
     {
         NSInteger screenCount = [[UIScreen screens] count];
-        int i = 10;
+        int i = 11;
         NSString *str = [NSString stringWithFormat:@"v0.3.6.%i Screen Did Connect : screen count:%i", i, (int)screenCount];
         [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"SCREEN_CHANGE"];
        
@@ -84,16 +84,8 @@ static OpenGL *GLVideoView = nil;
     
     [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"Decoder Release is %@", _decoder == nil ? @"NULL" : @"Not NULL"] event:@"RTMPDecoderEvent"];
     
-    if (_decoder == nil) {
-        _decoder = [[RTMPDecoder alloc]initWithRtmp:url];
-        [GLVideoView setupOpenGLWithAVFrame:[_decoder iFrame] andCodec:[_decoder iCodecCtx]];
-        if ([[UIScreen screens]count] > 1) {
-            [[AirAirplay sharedInstance]startVideoPlay];
-        }
-    } else {
-        [_decoder openStream:url];
-        [GLVideoView setupAVFrame:[_decoder iFrame] andCodec:[_decoder iCodecCtx]];
-    }
+    _decoder = [[RTMPDecoder alloc]initWithRtmp:url];
+    [GLVideoView setupOpenGLWithAVFrame:[_decoder iFrame] andCodec:[_decoder iCodecCtx]];
 }
 - (NSMutableArray *)getWindows
 {

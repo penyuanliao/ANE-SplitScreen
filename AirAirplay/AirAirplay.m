@@ -16,7 +16,7 @@
 #import "frameYUV.h"
 
 FREContext myCtx = nil;
-SplitScreen *splitScreen;
+SplitScreen *_splitScreen;
 @implementation AirAirplay
 @synthesize lastFrameTime;
 
@@ -45,7 +45,7 @@ static AirAirplay *sharedInstance = nil;
 
 - (NSString *)createScreenNotify
 {
-    splitScreen = [SplitScreen singleton];
+    _splitScreen = [SplitScreen singleton];
 //    [self setupVideoPlay];
     return @"sharedInstance";
 }
@@ -65,7 +65,7 @@ static AirAirplay *sharedInstance = nil;
 {
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
-    RTMPDecoder *_decoder = [splitScreen decoder];
+    RTMPDecoder *_decoder = [_splitScreen decoder];
     
     if (![_decoder decodeFrame]) {
         [timer invalidate];
@@ -73,7 +73,7 @@ static AirAirplay *sharedInstance = nil;
     }
     
     frameYUV *yuv = [[frameYUV alloc]initWithAVFrame:_decoder.iFrame andCodec:_decoder.iCodecCtx];
-    [[splitScreen getVideoView] render:yuv];
+    [[_splitScreen getVideoView] render:yuv];
     
     float frameTime = 1.0/([NSDate timeIntervalSinceReferenceDate]-startTime);
     if (lastFrameTime<0) {
@@ -105,7 +105,7 @@ DEFINE_ANE_FUNCTION(videoStreamingStartup)
     NSString *url = FREObjectToNSString(argv[0]);
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"stremStartup" UTF8String], (const uint8_t *)[url UTF8String]);
     //@"rtmp://183.182.70.196:443/video/dabbb/videohd"
-    [splitScreen setupStreamWithPath:url]; // 新增影片網址
+    [_splitScreen setupStreamWithPath:url]; // 新增影片網址
     return BoolToFREObject(true);
 }
 
