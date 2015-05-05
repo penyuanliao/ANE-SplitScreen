@@ -17,6 +17,7 @@
 
 FREContext myCtx = nil;
 SplitScreen *_splitScreen;
+
 @implementation AirAirplay
 @synthesize lastFrameTime;
 
@@ -52,16 +53,21 @@ static AirAirplay *sharedInstance = nil;
 ///** 初始化設定播放器 **/
 - (void)startVideoPlay
 {
+    __block RTMPDecoder *_decoder = [_splitScreen decoder];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [NSTimer scheduledTimerWithTimeInterval:1.0/25
+        if (_decoder != nil) {
+            [_decoder start];
+            _decoder = NULL;
+        }
+        [NSTimer scheduledTimerWithTimeInterval:1.0/60.0
                                          target:self
-                                       selector:@selector(displayNextFrame2:)
+                                       selector:@selector(displayNextFrame:)
                                        userInfo:nil
                                         repeats:YES];
     });
 }
 
--(void)displayNextFrame2:(NSTimer *)timer
+-(void)displayNextFrame:(NSTimer *)timer
 {
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
@@ -99,8 +105,8 @@ DEFINE_ANE_FUNCTION(init)
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"SCREEN_CHANGE" UTF8String], (const uint8_t *)[str UTF8String]);
     return NULL;
 }
-/****/
-DEFINE_ANE_FUNCTION(videoStreamingStartup)
+/** 開始播放 **/
+DEFINE_ANE_FUNCTION(videoConnect)
 {
     NSString *url = FREObjectToNSString(argv[0]);
     FREDispatchStatusEventAsync(myCtx, (const uint8_t *)[@"stremStartup" UTF8String], (const uint8_t *)[url UTF8String]);
@@ -108,7 +114,13 @@ DEFINE_ANE_FUNCTION(videoStreamingStartup)
     [_splitScreen setupStreamWithPath:url]; // 新增影片網址
     return BoolToFREObject(true);
 }
-
+/** 停止播放 **/
+DEFINE_ANE_FUNCTION(videoClose)
+{
+    [_splitScreen videoClose];
+    
+    return BoolToFREObject(true);
+}
 // Return FREObject
 FREObject BoolToFREObject(BOOL boolean)
 {
@@ -133,7 +145,7 @@ void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext
 {
     
     // Register the links btwn AS3 and ObjC. (dont forget to modify the nbFuntionsToLink integer if you are adding/removing functions)
-    NSInteger nbFuntionsToLink = 2;
+    NSInteger nbFuntionsToLink = 3;
     *numFunctionsToTest = (int)nbFuntionsToLink;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * nbFuntionsToLink);
@@ -142,9 +154,13 @@ void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext
     func[0].functionData = NULL;
     func[0].function = &init;
     
-    func[1].name = (const uint8_t*) "videoStreamingStartup";
+    func[1].name = (const uint8_t*) "videoConnect";
     func[1].functionData = NULL;
-    func[1].function = &videoStreamingStartup;
+    func[1].function = &videoConnect;
+    
+    func[2].name = (const uint8_t*) "videoClose";
+    func[2].functionData = NULL;
+    func[2].function = &videoClose;
     
     *functionsToSet = func;
     

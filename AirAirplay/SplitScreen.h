@@ -33,5 +33,6 @@
 
 - (OpenGL *) getVideoView;
 
+- (void)videoClose;
 
 @end

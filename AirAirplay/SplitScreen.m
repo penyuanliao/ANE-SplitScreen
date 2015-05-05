@@ -39,8 +39,8 @@ static OpenGL *GLVideoView = nil;
     if (self)
     {
         NSInteger screenCount = [[UIScreen screens] count];
-        int i = 11;
-        NSString *str = [NSString stringWithFormat:@"v0.3.6.%i Screen Did Connect : screen count:%i", i, (int)screenCount];
+        int i = 4;
+        NSString *str = [NSString stringWithFormat:@"v0.3.7.%i Screen Did Connect : screen count:%i", i, (int)screenCount];
         [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"SCREEN_CHANGE"];
        
         [self setupOpenGLView];
@@ -71,7 +71,7 @@ static OpenGL *GLVideoView = nil;
     GLVideoView = nil;
     GLVideoView = [[OpenGL alloc]init];
 }
-
+/** Open Stream URL Link **/
 - (void)setupStreamWithPath:(NSString *)url
 {
     if (url == NULL)
@@ -84,16 +84,23 @@ static OpenGL *GLVideoView = nil;
     
     [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"Decoder Release is %@", _decoder == nil ? @"NULL" : @"Not NULL"] event:@"RTMPDecoderEvent"];
     
-    _decoder = [[RTMPDecoder alloc]initWithRtmp:url];
+    _decoder = [[RTMPDecoder alloc]initWithRtmp:URL];
     [GLVideoView setupOpenGLWithAVFrame:[_decoder iFrame] andCodec:[_decoder iCodecCtx]];
 }
+
 - (NSMutableArray *)getWindows
 {
     return windows;
 }
+
 - (OpenGL *)getVideoView
 {
     return GLVideoView;
+}
+
+- (void)videoClose
+{
+    [_decoder close]; _decoder = nil;
 }
 
 - (void)log:(NSString *)str
@@ -176,7 +183,7 @@ static OpenGL *GLVideoView = nil;
         }
     }
 }
-/**  **/
+/** 建立新的視窗 **/
 + (UIWindow *) createWindowForScreenHandle:(UIScreen *)screen
 {
     

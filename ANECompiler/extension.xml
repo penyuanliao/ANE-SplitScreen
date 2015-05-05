@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension xmlns="http://ns.adobe.com/air/extension/17.0">
-
     <id>com.ane.os.device.info</id>
     <versionNumber>1.0.1</versionNumber>
     <platforms>

@@ -21,9 +21,12 @@
 
 @end
 
-DEFINE_ANE_FUNCTION(init);
-DEFINE_ANE_FUNCTION(videoStreamingStartup);
 
+DEFINE_ANE_FUNCTION(init);
+DEFINE_ANE_FUNCTION(videoConnect);
+DEFINE_ANE_FUNCTION(videoClose);
+
+/** ActionScript 3 bundle for Native code **/
 void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet);
 void AirplayContextFinalizer(FREContext ctx);
 void AirplayExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet );

@@ -29,6 +29,9 @@
 
 @property (nonatomic, assign, readonly) float fps;
 @property (nonatomic, assign, readonly) float vTimeBase;
+@property (nonatomic, assign, readonly) float time;
+/** 開始時間 **/
+@property (nonatomic, assign, readonly) NSDate *vStartTime;
 
 + (RTMPDecoder *)connectionWithPath:(NSString *)path;
 
@@ -39,6 +42,8 @@
 /** Stream 解碼視訊KeyFrame **/
 - (BOOL)decodeFrame;
 - (int)frameRate;
+
+- (void)start;
 /** 停止所有Stream視訊跟移除所有物件 **/
 - (void)close;
 

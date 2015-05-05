@@ -47,7 +47,7 @@ fi
 
 #Run the ADT command to generate the ANE
 pushd "$CONFIGURATION_BUILD_DIR"
-"$AIR_SDK_PATH"/bin/adt -package -target ane "$TARGET_NAME" "$CONFIGURATION_BUILD_DIR"/extension.xml -swc "$EXTENSION_SWC_FILE_NAME" -platform iPhone-ARM -platformoptions "$CONFIGURATION_BUILD_DIR"/platformRTMP.xml libs/libavcodec.a libs/libavdevice.a libs/libavfilter.a libs/libavformat.a libs/libavutil.a libs/libswscale.a -C "$CONFIGURATION_BUILD_DIR" "$NATIVE_EXTENSION_STATIC_LIB_NAME" "$CONFIGURATION_BUILD_DIR"/library.swf
+"$AIR_SDK_PATH"/bin/adt -package -target ane "$TARGET_NAME" "$CONFIGURATION_BUILD_DIR"/extension.xml -swc "$EXTENSION_SWC_FILE_NAME" -platform iPhone-ARM -platformoptions "$CONFIGURATION_BUILD_DIR"/platformRTMP.xml libs/libavcodec.a libs/libavdevice.a libs/libswresample.a libs/libavformat.a libs/libavutil.a -C "$CONFIGURATION_BUILD_DIR" "$NATIVE_EXTENSION_STATIC_LIB_NAME" "$CONFIGURATION_BUILD_DIR"/library.swf
 popd
 
 #rm "$COPY_PATH"/"$TARGET_NAME"
