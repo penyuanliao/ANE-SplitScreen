@@ -664,7 +664,7 @@ enum AVDiscard{
     AVDISCARD_BIDIR   = 16, ///< discard all bidirectional frames
     AVDISCARD_NONINTRA= 24, ///< discard all non intra frames
     AVDISCARD_NONKEY  = 32, ///< discard all frames except keyframes
-    AVDISCARD_ALL     = 48, ///< discard all
+    AVDISCARD_ALL     = 48, ///< discard all 丟棄全部
 };
 
 enum AVAudioServiceType {
