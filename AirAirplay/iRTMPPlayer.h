@@ -2,7 +2,9 @@
 //  iRTMPPlayer.h
 //  iFrameExtractor
 //
-//  Created by mobile on 2015/3/16.
+//  透過scale.a 轉會成RGB顏色
+//
+//  Created by Benson.liao on 2015/3/16.
 //
 //
 #import <UIKit/UIKit.h>
@@ -24,7 +26,6 @@ typedef NS_ENUM(NSInteger, StreamType) {
     STREAM_TYPE_ATTACHMENT  = 4,
     STREAM_TYPE_NB          = 5
 };
-
 
 @interface iRTMPPlayer : NSObject
 

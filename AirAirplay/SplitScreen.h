@@ -19,11 +19,11 @@
 /** ffmpeg decoder RTMP VP6 movie **/
 @property (nonatomic, retain) RTMPDecoder *decoder;
 
-+ (void) load;
++ (void)load;
 
-+ (void) screenDidConnect:(NSNotification *) notification;
++ (void)screenDidConnect:(NSNotification *) notification;
 
-+ (id) singleton;
++ (id)singleton;
 
 - (id)initWithContext:(FREContext)ctx;
 
@@ -31,8 +31,12 @@
 
 - (NSMutableArray *)getWindows;
 
-- (OpenGL *) getVideoView;
+- (OpenGL *)getVideoView;
 
 - (void)videoClose;
+
+- (void)dispatchStreamFPSInfo:(BOOL)enabled;
+
+- (void)dispatchStreamMetaDataInfo:(BOOL)enabled;
 
 @end

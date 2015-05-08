@@ -121,6 +121,44 @@ DEFINE_ANE_FUNCTION(videoClose)
     
     return BoolToFREObject(true);
 }
+DEFINE_ANE_FUNCTION(dispatchStreamFPSInfo)
+{
+    BOOL fpsEnabled = FREObjectToBOOL(argv[0]);
+    
+    [_splitScreen dispatchStreamFPSInfo:fpsEnabled];
+    
+    return BoolToFREObject(true);
+}
+
+DEFINE_ANE_FUNCTION(dispatchStreamMetaDataInfo)
+{
+    BOOL metaDataEnabled = FREObjectToBOOL(argv[0]);
+    
+    [_splitScreen dispatchStreamMetaDataInfo:metaDataEnabled];
+    
+    return BoolToFREObject(true);
+}
+
+DEFINE_ANE_FUNCTION(isSupported)
+{
+    NSLog(@"Entering IsSupported()");
+    
+    FREObject fo;
+    
+    FREResult aResult = FRENewObjectFromBool(YES, &fo);
+    if (aResult == FRE_OK)
+    {
+        NSLog(@"Result = %d", aResult);
+    }
+    else
+    {
+        NSLog(@"Result = %d", aResult);
+    }
+    
+    NSLog(@"Exiting IsSupported()");
+    return fo;
+}
+
 // Return FREObject
 FREObject BoolToFREObject(BOOL boolean)
 {
@@ -137,6 +175,12 @@ NSString* FREObjectToNSString(FREObject arg)
     NSString *str = [NSString stringWithUTF8String:(char *)strCr];
     return str;
 }
+BOOL FREObjectToBOOL(FREObject arg)
+{
+    uint32_t val;
+    FREGetObjectAsBool(arg, &val);
+    return (BOOL)val;
+}
 
 /** AirplayContextInitializer() **/
 // The context initializer is called when the runtime creates the extension context instance.
@@ -145,7 +189,7 @@ void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext
 {
     
     // Register the links btwn AS3 and ObjC. (dont forget to modify the nbFuntionsToLink integer if you are adding/removing functions)
-    NSInteger nbFuntionsToLink = 3;
+    NSInteger nbFuntionsToLink = 6;
     *numFunctionsToTest = (int)nbFuntionsToLink;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * nbFuntionsToLink);
@@ -161,6 +205,14 @@ void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext
     func[2].name = (const uint8_t*) "videoClose";
     func[2].functionData = NULL;
     func[2].function = &videoClose;
+    
+    func[3].name = (const uint8_t*) "dispatchStreamFPSInfo";
+    func[3].functionData = NULL;
+    func[3].function = &dispatchStreamFPSInfo;
+
+    func[4].name = (const uint8_t*) "dispatchStreamMetaDataInfo";
+    func[4].functionData = NULL;
+    func[4].function = &dispatchStreamMetaDataInfo;
     
     *functionsToSet = func;
     

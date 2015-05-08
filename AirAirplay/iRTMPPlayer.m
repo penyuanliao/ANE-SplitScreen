@@ -187,14 +187,14 @@ static int decode_interrupt_cb(void *ctx)
     float ratiosH = size.width / outputHeight;
     return ratios = (ratiosH > ratiosW ? ratiosW : ratiosH);
 }
-#pragma Getter Value
+#pragma -mark Getter Value
 - (int)frameRate {
     if (!isRead) return 0;
     AVStream *stream = ifomtCtx->streams[streamNode];
     NSLog(@"framerate:%i",stream->r_frame_rate.num / stream->r_frame_rate.den);
     return stream->r_frame_rate.num / stream->r_frame_rate.den;
 }
-#pragma Setter Value
+#pragma -mark Setter Value
 - (double)duration {
     return ((double)ifomtCtx->duration / AV_TIME_BASE);
 }

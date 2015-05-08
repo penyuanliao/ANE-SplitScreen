@@ -2,7 +2,7 @@
 #define AirAirplay_AirAirplay_h
 #endif
 //
-// 2015.05.05 Main
+// Created by Benson.liao 2015.05.05 Main
 //
 #import "FlashRuntimeExtensions.h"
 #import <UIKit/UIKit.h>
@@ -23,10 +23,12 @@
 
 @end
 
-
 DEFINE_ANE_FUNCTION(init);
 DEFINE_ANE_FUNCTION(videoConnect);
 DEFINE_ANE_FUNCTION(videoClose);
+DEFINE_ANE_FUNCTION(dispatchStreamFPSInfo);
+DEFINE_ANE_FUNCTION(dispatchStreamMetaDataInfo);
+DEFINE_ANE_FUNCTION(isSupported);
 
 /** ActionScript 3 bundle for Native code **/
 void AirplayContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet);
@@ -34,10 +36,11 @@ void AirplayContextFinalizer(FREContext ctx);
 void AirplayExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet );
 void AirplayExtFinalizer(void *extData);
 
-
-
 /** ObjC to Flash **/
 FREObject BoolToFREObject(BOOL boolean);
 
-/** Flash to ObjC **/
+/** Flash String to ObjC **/
 NSString* FREObjectToNSString(FREObject arg);
+
+/** Flash Bool to ObjC  **/
+BOOL FREObjectToBOOL(FREObject arg);

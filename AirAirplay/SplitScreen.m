@@ -10,7 +10,10 @@
 
 /** rtmp stream url **/
 @property (nonatomic, retain) NSString *URL;
-
+/** flash dispatch event fps info **/
+@property (nonatomic, assign) BOOL fpsEnabled;
+/** flash dispatch event metaData info **/
+@property (nonatomic, assign) BOOL metaDataEnabled;
 @end
 
 
@@ -22,7 +25,8 @@
 /** OpenGL Darwing **/
 static OpenGL *GLVideoView = nil;
 //singleton
-+ (SplitScreen *)singleton {
++ (SplitScreen *)singleton
+{
     static dispatch_once_t pred;
     static SplitScreen *shared = nil;
     dispatch_once(&pred, ^{
@@ -39,10 +43,11 @@ static OpenGL *GLVideoView = nil;
     if (self)
     {
         NSInteger screenCount = [[UIScreen screens] count];
-        int i = 4;
-        NSString *str = [NSString stringWithFormat:@"v0.3.7.%i Screen Did Connect : screen count:%i", i, (int)screenCount];
+        
+        int i = 0;
+        NSString *str = [NSString stringWithFormat:@"v0.3.8.%i Screen Did Connect : screen count:%i", i, (int)screenCount];
         [[AirAirplay sharedInstance]asyncyToActionScriptWithString:str event:@"SCREEN_CHANGE"];
-       
+        
         [self setupOpenGLView];
         [self airPlayBeEnabled];
     }
@@ -225,4 +230,34 @@ static OpenGL *GLVideoView = nil;
     NSLog(@"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
     return _window;
 }
+
+#pragma -mark FFMpeg Info
+/** **/
+- (void)dispatchStreamFPSInfo:(BOOL)enabled
+{
+    _fpsEnabled = enabled;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [NSTimer scheduledTimerWithTimeInterval:1.0/60.0
+                                         target:self
+                                       selector:@selector(onStramFrameFPS:)
+                                       userInfo:nil
+                                        repeats:YES];
+    });
+}
+/** **/
+- (void)dispatchStreamMetaDataInfo:(BOOL)enabled
+{
+    _metaDataEnabled = enabled;
+}
+-(void)onStramFrameFPS:(NSTimer *)timer
+{
+    // stop printf !!
+    if (!_fpsEnabled) [timer invalidate];
+    
+    // as3 print fps info
+    [[AirAirplay sharedInstance]asyncyToActionScriptWithString:[NSString stringWithFormat:@"fps=%f",[_decoder fps]] event:@"NEStreamFrameOnFPS"];
+    
+}
+
 @end
