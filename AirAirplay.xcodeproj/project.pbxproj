@@ -36,13 +36,6 @@
 		75C6A4001ABA7C6500D28407 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9741AB8364B000BE582 /* libavutil.a */; };
 		75C6A4011ABA7C6500D28407 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9761AB8364B000BE582 /* libswscale.a */; };
 		75C6A4021ABA7D1100D28407 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E5D9751AB8364B000BE582 /* libswresample.a */; };
-		75C6A4031ABA7D1E00D28407 /* libavcodec.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9701AB8364B000BE582 /* libavcodec.a */; };
-		75C6A4041ABA7D1E00D28407 /* libavdevice.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9711AB8364B000BE582 /* libavdevice.a */; };
-		75C6A4051ABA7D1E00D28407 /* libavfilter.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9721AB8364B000BE582 /* libavfilter.a */; };
-		75C6A4061ABA7D1E00D28407 /* libavformat.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9731AB8364B000BE582 /* libavformat.a */; };
-		75C6A4071ABA7D1E00D28407 /* libavutil.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9741AB8364B000BE582 /* libavutil.a */; };
-		75C6A4081ABA7D1E00D28407 /* libswresample.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9751AB8364B000BE582 /* libswresample.a */; };
-		75C6A4091ABA7D1E00D28407 /* libswscale.a in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D9761AB8364B000BE582 /* libswscale.a */; };
 		75E5D9771AB8364B000BE582 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90D1AB8364B000BE582 /* avcodec.h */; };
 		75E5D9781AB8364B000BE582 /* avfft.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90E1AB8364B000BE582 /* avfft.h */; };
 		75E5D9791AB8364B000BE582 /* dv_profile.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E5D90F1AB8364B000BE582 /* dv_profile.h */; };
@@ -165,10 +158,6 @@
 		75A7271E1AD514C6008A2FBB /* RTMPDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMPDecoder.m; sourceTree = "<group>"; };
 		75A8C7461AB036600041B6B0 /* AirAirplay.ane */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = AirAirplay.ane; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A8C7651AB03A6F0041B6B0 /* generateANE.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generateANE.sh; sourceTree = "<group>"; };
-		75A8C76D1AB167D20041B6B0 /* AlertEvent.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlertEvent.as; sourceTree = "<group>"; };
-		75A8C76E1AB167D20041B6B0 /* ImagePickerEvent.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImagePickerEvent.as; sourceTree = "<group>"; };
-		75A8C76F1AB167D20041B6B0 /* LocationEvent.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationEvent.as; sourceTree = "<group>"; };
-		75A8C7701AB167D20041B6B0 /* ScannerEvent.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScannerEvent.as; sourceTree = "<group>"; };
 		75A8C7731AB175920041B6B0 /* install.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = install.md; sourceTree = "<group>"; };
 		75A8C7751AB196740041B6B0 /* extension.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = extension.xml; sourceTree = "<group>"; };
 		75A8C7851AB196740041B6B0 /* platformRTMP.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = platformRTMP.xml; sourceTree = "<group>"; };
@@ -176,6 +165,8 @@
 		75B77AA21AB92DE8007275C8 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
 		75C697491AB978B600A54283 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		75C6A40B1ABC00BF00D28407 /* SplitScreen.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = SplitScreen.as; sourceTree = "<group>"; };
+		75CE1CDE1AFB51AB00384B62 /* NEStreamEvent.as */ = {isa = PBXFileReference; lastKnownFileType = text; path = NEStreamEvent.as; sourceTree = "<group>"; };
+		75CE1CE21AFC642600384B62 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = info.plist; path = ../info.plist; sourceTree = "<group>"; };
 		75E5D90D1AB8364B000BE582 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		75E5D90E1AB8364B000BE582 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
 		75E5D90F1AB8364B000BE582 /* dv_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dv_profile.h; sourceTree = "<group>"; };
@@ -354,6 +345,7 @@
 		5AC0EBB3151A38F300A3043E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75CE1CE21AFC642600384B62 /* info.plist */,
 				5AC0EBB4151A38F300A3043E /* AirAirplay-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -427,19 +419,16 @@
 		75A8C76B1AB167D20041B6B0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				75A8C76C1AB167D20041B6B0 /* event */,
+				75CE1CDD1AFB51AB00384B62 /* event */,
 				75C6A40B1ABC00BF00D28407 /* SplitScreen.as */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		75A8C76C1AB167D20041B6B0 /* event */ = {
+		75CE1CDD1AFB51AB00384B62 /* event */ = {
 			isa = PBXGroup;
 			children = (
-				75A8C76D1AB167D20041B6B0 /* AlertEvent.as */,
-				75A8C76E1AB167D20041B6B0 /* ImagePickerEvent.as */,
-				75A8C76F1AB167D20041B6B0 /* LocationEvent.as */,
-				75A8C7701AB167D20041B6B0 /* ScannerEvent.as */,
+				75CE1CDE1AFB51AB00384B62 /* NEStreamEvent.as */,
 			);
 			path = event;
 			sourceTree = "<group>";
@@ -736,6 +725,7 @@
 				5AC0EBA9151A38F300A3043E /* Sources */,
 				5AC0EBAA151A38F300A3043E /* Frameworks */,
 				5AC0EBAB151A38F300A3043E /* Headers */,
+				75CE1CE01AFC60A100384B62 /* xcode-build-bump */,
 			);
 			buildRules = (
 			);
@@ -822,6 +812,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${AIR_SDK_PATH}\"/bin/acompc -source-path \"${PROJECT_DIR}/${NATIVEEXTENSION_PATH}\" -include-classes \"${SWC_Include_Classes}\" -swf-version=\"${SWF_Version}\" -output \"${PROJECT_DIR}/${NATIVEEXTENSION_SWC}\"";
 		};
+		75CE1CE01AFC60A100384B62 /* xcode-build-bump */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "xcode-build-bump";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n\nbuildNumber=$(($buildNumber + 1))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -830,15 +834,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A727191AD514BA008A2FBB /* frameYUV.m in Sources */,
-				75C6A4031ABA7D1E00D28407 /* libavcodec.a in Sources */,
-				75C6A4041ABA7D1E00D28407 /* libavdevice.a in Sources */,
-				75C6A4051ABA7D1E00D28407 /* libavfilter.a in Sources */,
-				75C6A4061ABA7D1E00D28407 /* libavformat.a in Sources */,
-				75C6A4071ABA7D1E00D28407 /* libavutil.a in Sources */,
 				75A7271B1AD514BA008A2FBB /* GLSLRenderYUV.m in Sources */,
 				75A7270F1AD50F58008A2FBB /* OpenGL.m in Sources */,
-				75C6A4081ABA7D1E00D28407 /* libswresample.a in Sources */,
-				75C6A4091ABA7D1E00D28407 /* libswscale.a in Sources */,
 				757F1DB21AAD504000FA2EA6 /* SplitScreen.m in Sources */,
 				757F1DAA1AAD43E700FA2EA6 /* AirAirplay.m in Sources */,
 				75E5D9E31AB90A1E000BE582 /* iRTMPPlayer.m in Sources */,
@@ -875,6 +872,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = info.plist;
 				INSTALL_PATH = ../;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
@@ -893,6 +891,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = info.plist;
 				INSTALL_PATH = ../;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
